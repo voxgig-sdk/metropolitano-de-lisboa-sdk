@@ -1,0 +1,298 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Metropolitano de Lisboa",
+    "description": "The Lisbon Metro API provides access to comprehensive data on the Lisbon Metro system, including historical and current information about stations, lines, schedules, and passenger statistics. The API allows users to access details about the development and expansion of the metro network, its operational history, and key milestones.",
+    "version": "1.0.0",
+    "contact": {
+      "name": "Metropolitano de Lisboa",
+      "url": "https://www.metrolisboa.pt/"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://api.metrolisboa.pt/v1",
+      "description": "Production server"
+    }
+  ],
+  "paths": {
+    "/network": {
+      "get": {
+        "summary": "Get metro network information",
+        "description": "Retrieves comprehensive information about the Lisbon Metro network including stations, lines, schedules, and passenger statistics",
+        "operationId": "getNetworkInfo",
+        "tags": [
+          "Network"
+        ],
+        "parameters": [
+          {
+            "name": "include",
+            "in": "query",
+            "description": "Comma-separated list of data to include (stations, lines, schedules, statistics, history)",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "example": "stations,lines"
+            }
+          },
+          {
+            "name": "line",
+            "in": "query",
+            "description": "Filter by specific metro line",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "blue",
+                "yellow",
+                "green",
+                "red"
+              ]
+            }
+          },
+          {
+            "name": "historical",
+            "in": "query",
+            "description": "Include historical data",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with network information",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "network": {
+                      "type": "object",
+                      "properties": {
+                        "name": {
+                          "type": "string",
+                          "example": "Metropolitano de Lisboa"
+                        },
+                        "totalStations": {
+                          "type": "integer",
+                          "example": 56
+                        },
+                        "totalLines": {
+                          "type": "integer",
+                          "example": 4
+                        },
+                        "lines": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "type": "string",
+                                "example": "blue"
+                              },
+                              "name": {
+                                "type": "string",
+                                "example": "Linha Azul"
+                              },
+                              "color": {
+                                "type": "string",
+                                "example": "#0066CC"
+                              },
+                              "stations": {
+                                "type": "array",
+                                "items": {
+                                  "type": "string"
+                                }
+                              },
+                              "inaugurated": {
+                                "type": "string",
+                                "format": "date",
+                                "example": "1959-12-29"
+                              }
+                            }
+                          }
+                        },
+                        "stations": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "type": "string",
+                                "example": "alameda"
+                              },
+                              "name": {
+                                "type": "string",
+                                "example": "Alameda"
+                              },
+                              "lines": {
+                                "type": "array",
+                                "items": {
+                                  "type": "string"
+                                }
+                              },
+                              "location": {
+                                "type": "object",
+                                "properties": {
+                                  "latitude": {
+                                    "type": "number",
+                                    "format": "double",
+                                    "example": 38.7352
+                                  },
+                                  "longitude": {
+                                    "type": "number",
+                                    "format": "double",
+                                    "example": -9.1386
+                                  }
+                                }
+                              },
+                              "inaugurated": {
+                                "type": "string",
+                                "format": "date"
+                              },
+                              "accessibility": {
+                                "type": "boolean",
+                                "example": true
+                              }
+                            }
+                          }
+                        },
+                        "schedules": {
+                          "type": "object",
+                          "properties": {
+                            "weekday": {
+                              "type": "object",
+                              "properties": {
+                                "opening": {
+                                  "type": "string",
+                                  "example": "06:30"
+                                },
+                                "closing": {
+                                  "type": "string",
+                                  "example": "01:00"
+                                }
+                              }
+                            },
+                            "weekend": {
+                              "type": "object",
+                              "properties": {
+                                "opening": {
+                                  "type": "string",
+                                  "example": "06:30"
+                                },
+                                "closing": {
+                                  "type": "string",
+                                  "example": "01:00"
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "statistics": {
+                          "type": "object",
+                          "properties": {
+                            "annualPassengers": {
+                              "type": "integer",
+                              "example": 173000000
+                            },
+                            "dailyAveragePassengers": {
+                              "type": "integer",
+                              "example": 474000
+                            },
+                            "totalNetworkLength": {
+                              "type": "number",
+                              "format": "double",
+                              "example": 44.5,
+                              "description": "Total network length in kilometers"
+                            }
+                          }
+                        },
+                        "history": {
+                          "type": "object",
+                          "properties": {
+                            "inaugurated": {
+                              "type": "string",
+                              "format": "date",
+                              "example": "1959-12-29"
+                            },
+                            "milestones": {
+                              "type": "array",
+                              "items": {
+                                "type": "object",
+                                "properties": {
+                                  "date": {
+                                    "type": "string",
+                                    "format": "date"
+                                  },
+                                  "event": {
+                                    "type": "string"
+                                  },
+                                  "description": {
+                                    "type": "string"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request - Invalid parameters",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string",
+                      "example": "Invalid parameter value"
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "The specified line does not exist"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string",
+                      "example": "Internal server error"
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "An unexpected error occurred"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Network",
+      "description": "Operations related to the Lisbon Metro network information"
+    }
+  ]
+}

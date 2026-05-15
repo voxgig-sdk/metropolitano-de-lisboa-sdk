@@ -1,0 +1,71 @@
+# Entity: network
+
+main: kit: entity: network: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "network"
+      req: false
+      type: "`$OBJECT`"
+    }
+  ]
+
+  name: "network"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          args: {
+            query: [
+              {
+                example: false
+                kind: "query"
+                name: "historical"
+                orig: "historical"
+                reqd: false
+                type: "`$BOOLEAN`"
+              }
+              {
+                example: "stations,lines"
+                kind: "query"
+                name: "include"
+                orig: "include"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "line"
+                orig: "line"
+                reqd: false
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/network"
+          parts: [
+            "network"
+          ]
+          select: {
+            exist: [
+              "historical"
+              "include"
+              "line"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

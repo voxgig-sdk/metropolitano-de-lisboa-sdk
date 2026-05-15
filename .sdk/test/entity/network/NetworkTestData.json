@@ -1,0 +1,22 @@
+{
+  "existing": {
+    "network": {
+      "NETWORK00": {
+        "network": {}
+      },
+      "NETWORK01": {
+        "network": {}
+      },
+      "NETWORK02": {
+        "network": {}
+      }
+    }
+  },
+  "new": {
+    "network": {
+      "network_ref01": {
+        "network": {}
+      }
+    }
+  }
+}

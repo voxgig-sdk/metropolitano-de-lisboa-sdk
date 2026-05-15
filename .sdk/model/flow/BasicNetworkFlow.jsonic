@@ -1,0 +1,28 @@
+# BasicNetworkFlow
+
+main: kit: flow: BasicNetworkFlow:
+{
+  entity: "network",
+  kind: "basic",
+  name: "BasicNetworkFlow",
+  step: [
+    {
+      input: {
+        ref: "network_ref01",
+        srcdatavar: "network_ref01_data",
+        suffix: "_dt0"
+      }
+
+      op: "load",
+      valid: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-network_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicNetworkFlow"
+}
