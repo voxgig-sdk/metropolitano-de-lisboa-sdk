@@ -1,7 +1,7 @@
 package core
 
 import (
-	vs "github.com/voxgig/struct"
+	vs "github.com/voxgig-sdk/metropolitano-de-lisboa-sdk/go/utility/struct"
 )
 
 type Point struct {

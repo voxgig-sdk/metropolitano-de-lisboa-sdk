@@ -4,7 +4,7 @@ import (
 	"log/slog"
 	"os"
 
-	"github.com/voxgig-sdk/metropolitano-de-lisboa-sdk/core"
+	"github.com/voxgig-sdk/metropolitano-de-lisboa-sdk/go/core"
 )
 
 type LogFeature struct {

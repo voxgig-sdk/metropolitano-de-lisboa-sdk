@@ -1,10 +1,10 @@
 package voxgigmetropolitanodelisboasdk
 
 import (
-	"github.com/voxgig-sdk/metropolitano-de-lisboa-sdk/core"
-	"github.com/voxgig-sdk/metropolitano-de-lisboa-sdk/entity"
-	"github.com/voxgig-sdk/metropolitano-de-lisboa-sdk/feature"
-	_ "github.com/voxgig-sdk/metropolitano-de-lisboa-sdk/utility"
+	"github.com/voxgig-sdk/metropolitano-de-lisboa-sdk/go/core"
+	"github.com/voxgig-sdk/metropolitano-de-lisboa-sdk/go/entity"
+	"github.com/voxgig-sdk/metropolitano-de-lisboa-sdk/go/feature"
+	_ "github.com/voxgig-sdk/metropolitano-de-lisboa-sdk/go/utility"
 )
 
 // Type aliases preserve external API.

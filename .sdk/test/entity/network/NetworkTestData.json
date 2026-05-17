@@ -2,13 +2,16 @@
   "existing": {
     "network": {
       "NETWORK00": {
-        "network": {}
+        "network": {},
+        "id": "NETWORK00"
       },
       "NETWORK01": {
-        "network": {}
+        "network": {},
+        "id": "NETWORK01"
       },
       "NETWORK02": {
-        "network": {}
+        "network": {},
+        "id": "NETWORK02"
       }
     }
   },

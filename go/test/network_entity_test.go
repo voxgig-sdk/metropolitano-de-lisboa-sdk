@@ -9,10 +9,10 @@ import (
 	"testing"
 	"time"
 
-	sdk "github.com/voxgig-sdk/metropolitano-de-lisboa-sdk"
-	"github.com/voxgig-sdk/metropolitano-de-lisboa-sdk/core"
+	sdk "github.com/voxgig-sdk/metropolitano-de-lisboa-sdk/go"
+	"github.com/voxgig-sdk/metropolitano-de-lisboa-sdk/go/core"
 
-	vs "github.com/voxgig/struct"
+	vs "github.com/voxgig-sdk/metropolitano-de-lisboa-sdk/go/utility/struct"
 )
 
 func TestNetworkEntity(t *testing.T) {

@@ -3,9 +3,9 @@ package utility
 import (
 	"strings"
 
-	vs "github.com/voxgig/struct"
+	vs "github.com/voxgig-sdk/metropolitano-de-lisboa-sdk/go/utility/struct"
 
-	"github.com/voxgig-sdk/metropolitano-de-lisboa-sdk/core"
+	"github.com/voxgig-sdk/metropolitano-de-lisboa-sdk/go/core"
 )
 
 func makeOptionsUtil(ctx *core.Context) map[string]any {

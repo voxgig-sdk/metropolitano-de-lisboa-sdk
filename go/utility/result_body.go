@@ -1,6 +1,6 @@
 package utility
 
-import "github.com/voxgig-sdk/metropolitano-de-lisboa-sdk/core"
+import "github.com/voxgig-sdk/metropolitano-de-lisboa-sdk/go/core"
 
 func resultBodyUtil(ctx *core.Context) *core.Result {
 	response := ctx.Response

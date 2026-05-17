@@ -1,6 +1,6 @@
 package utility
 
-import "github.com/voxgig-sdk/metropolitano-de-lisboa-sdk/core"
+import "github.com/voxgig-sdk/metropolitano-de-lisboa-sdk/go/core"
 
 func init() {
 	core.UtilityRegistrar = registerAll

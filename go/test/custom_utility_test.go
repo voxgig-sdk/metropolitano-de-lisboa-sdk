@@ -3,7 +3,7 @@ package sdktest
 import (
 	"testing"
 
-	sdk "github.com/voxgig-sdk/metropolitano-de-lisboa-sdk"
+	sdk "github.com/voxgig-sdk/metropolitano-de-lisboa-sdk/go"
 )
 
 func TestCustomUtility(t *testing.T) {

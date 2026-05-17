@@ -1,9 +1,9 @@
 package utility
 
 import (
-	vs "github.com/voxgig/struct"
+	vs "github.com/voxgig-sdk/metropolitano-de-lisboa-sdk/go/utility/struct"
 
-	"github.com/voxgig-sdk/metropolitano-de-lisboa-sdk/core"
+	"github.com/voxgig-sdk/metropolitano-de-lisboa-sdk/go/core"
 )
 
 const headerAuth = "authorization"

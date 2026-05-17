@@ -1,7 +1,7 @@
 package feature
 
 import (
-	"github.com/voxgig-sdk/metropolitano-de-lisboa-sdk/core"
+	"github.com/voxgig-sdk/metropolitano-de-lisboa-sdk/go/core"
 )
 
 type BaseFeature struct {

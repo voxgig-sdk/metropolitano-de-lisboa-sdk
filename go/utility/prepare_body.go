@@ -1,6 +1,6 @@
 package utility
 
-import "github.com/voxgig-sdk/metropolitano-de-lisboa-sdk/core"
+import "github.com/voxgig-sdk/metropolitano-de-lisboa-sdk/go/core"
 
 func prepareBodyUtil(ctx *core.Context) any {
 	op := ctx.Op
