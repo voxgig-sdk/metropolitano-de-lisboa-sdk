@@ -15,9 +15,6 @@ module MetropolitanoDeLisboaConfig
       },
       "options" => {
         "base" => "https://api.metrolisboa.pt/v1",
-        "auth" => {
-          "prefix" => "Bearer",
-        },
         "headers" => {
           "content-type" => "application/json",
         },

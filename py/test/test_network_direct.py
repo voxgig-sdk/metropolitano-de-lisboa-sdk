@@ -59,14 +59,12 @@ def _network_direct_setup(mockres):
     env = runner.env_override({
         "METROPOLITANODELISBOA_TEST_NETWORK_ENTID": {},
         "METROPOLITANODELISBOA_TEST_LIVE": "FALSE",
-        "METROPOLITANODELISBOA_APIKEY": "NONE",
     })
 
     live = env.get("METROPOLITANODELISBOA_TEST_LIVE") == "TRUE"
 
     if live:
         merged_opts = {
-            "apikey": env.get("METROPOLITANODELISBOA_APIKEY"),
         }
         client = MetropolitanoDeLisboaSDK(merged_opts)
         return {

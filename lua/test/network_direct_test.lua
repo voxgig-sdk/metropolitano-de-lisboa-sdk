@@ -62,14 +62,12 @@ function network_direct_setup(mockres)
   local env = runner.env_override({
     ["METROPOLITANODELISBOA_TEST_NETWORK_ENTID"] = {},
     ["METROPOLITANODELISBOA_TEST_LIVE"] = "FALSE",
-    ["METROPOLITANODELISBOA_APIKEY"] = "NONE",
   })
 
   local live = env["METROPOLITANODELISBOA_TEST_LIVE"] == "TRUE"
 
   if live then
     local merged_opts = {
-      apikey = env["METROPOLITANODELISBOA_APIKEY"],
     }
     local client = sdk.new(merged_opts)
     return {
