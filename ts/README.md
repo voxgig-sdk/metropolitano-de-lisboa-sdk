@@ -10,7 +10,7 @@ The TypeScript SDK for the MetropolitanoDeLisboa API — a type-safe, entity-ori
 
 ## Install
 ```bash
-npm install metropolitano-de-lisboa
+npm install @voxgig-sdk/metropolitano-de-lisboa
 ```
 ## Tutorial: your first API call
 

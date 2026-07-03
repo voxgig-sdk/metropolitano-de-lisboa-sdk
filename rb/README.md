@@ -10,13 +10,13 @@ The Ruby SDK for the MetropolitanoDeLisboa API — an entity-oriented client usi
 
 ## Install
 ```bash
-gem install metropolitano-de-lisboa-sdk
+gem install voxgig-sdk-metropolitano-de-lisboa
 ```
 
 Or add to your `Gemfile`:
 
 ```ruby
-gem "metropolitano-de-lisboa-sdk"
+gem "voxgig-sdk-metropolitano-de-lisboa"
 ```
 
 Then run:

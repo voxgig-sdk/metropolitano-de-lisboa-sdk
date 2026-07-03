@@ -10,7 +10,7 @@ The Python SDK for the MetropolitanoDeLisboa API — an entity-oriented client f
 
 ## Install
 ```bash
-pip install metropolitano-de-lisboa-sdk
+pip install voxgig-sdk-metropolitano-de-lisboa
 ```
 
 Or install from source:

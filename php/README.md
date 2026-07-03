@@ -10,7 +10,7 @@ The PHP SDK for the MetropolitanoDeLisboa API — an entity-oriented client usin
 
 ## Install
 ```bash
-composer require voxgig/metropolitano-de-lisboa-sdk
+composer require voxgig-sdk/metropolitano-de-lisboa
 ```
 
 

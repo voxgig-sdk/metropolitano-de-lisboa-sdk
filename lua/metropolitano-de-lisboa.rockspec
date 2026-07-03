@@ -8,12 +8,14 @@ source = {
   dir = "metropolitano-de-lisboa-sdk/lua"
 }
 description = {
-  summary = "MetropolitanoDeLisboa SDK for Lua",
-  license = "MIT"
+  summary = "Unofficial generated Lua SDK for the Metropolitano de Lisboa public API. Not affiliated with or endorsed by the upstream API provider.",
+  homepage = "https://github.com/voxgig-sdk/metropolitano-de-lisboa-sdk",
+  issues_url = "https://github.com/voxgig-sdk/metropolitano-de-lisboa-sdk/issues",
+  license = "MIT",
+  labels = { "voxgig", "sdk", "generated-sdk", "openapi", "api-client", "metropolitano-de-lisboa" }
 }
 dependencies = {
   "lua >= 5.3",
-  "dkjson >= 2.5",
   "dkjson >= 2.5",
 }
 build = {

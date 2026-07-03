@@ -10,7 +10,7 @@ The Lua SDK for the MetropolitanoDeLisboa API — an entity-oriented client usin
 
 ## Install
 ```bash
-luarocks install metropolitano-de-lisboa-sdk
+luarocks install voxgig-sdk-metropolitano-de-lisboa
 ```
 
 If the module is not yet published, add the source directory to
