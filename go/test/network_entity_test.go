@@ -117,6 +117,7 @@ func networkBasicSetup(extra map[string]any) *entityTestSetup {
 		"METROPOLITANODELISBOA_TEST_NETWORK_ENTID": idmap,
 		"METROPOLITANODELISBOA_TEST_LIVE":      "FALSE",
 		"METROPOLITANODELISBOA_TEST_EXPLAIN":   "FALSE",
+		"METROPOLITANODELISBOA_APIKEY":         "NONE",
 	})
 
 	idmapResolved := core.ToMapAny(env["METROPOLITANODELISBOA_TEST_NETWORK_ENTID"])
@@ -127,6 +128,7 @@ func networkBasicSetup(extra map[string]any) *entityTestSetup {
 	if env["METROPOLITANODELISBOA_TEST_LIVE"] == "TRUE" {
 		mergedOpts := vs.Merge([]any{
 			map[string]any{
+				"apikey": env["METROPOLITANODELISBOA_APIKEY"],
 			},
 			extra,
 		})

@@ -20,6 +20,9 @@ class MetropolitanoDeLisboaConfig
             ],
             "options" => [
                 "base" => "https://api.metrolisboa.pt/v1",
+                "auth" => [
+                    "prefix" => "Bearer",
+                ],
                 "headers" => [
           'content-type' => 'application/json',
         ],
@@ -31,46 +34,48 @@ class MetropolitanoDeLisboaConfig
         'network' => [
           'fields' => [
             [
+              'active' => true,
               'name' => 'network',
               'req' => false,
               'type' => '`$OBJECT`',
-              'active' => true,
               'index$' => 0,
             ],
           ],
           'name' => 'network',
           'op' => [
             'load' => [
+              'input' => 'data',
               'name' => 'load',
               'points' => [
                 [
+                  'active' => true,
                   'args' => [
                     'query' => [
                       [
+                        'active' => true,
                         'example' => false,
                         'kind' => 'query',
                         'name' => 'historical',
                         'orig' => 'historical',
                         'reqd' => false,
                         'type' => '`$BOOLEAN`',
-                        'active' => true,
                       ],
                       [
+                        'active' => true,
                         'example' => 'stations,lines',
                         'kind' => 'query',
                         'name' => 'include',
                         'orig' => 'include',
                         'reqd' => false,
                         'type' => '`$STRING`',
-                        'active' => true,
                       ],
                       [
+                        'active' => true,
                         'kind' => 'query',
                         'name' => 'line',
                         'orig' => 'line',
                         'reqd' => false,
                         'type' => '`$STRING`',
-                        'active' => true,
                       ],
                     ],
                   ],
@@ -88,13 +93,11 @@ class MetropolitanoDeLisboaConfig
                   ],
                   'transform' => [
                     'req' => '`reqdata`',
-                    'res' => '`body`',
+                    'res' => '`body.network`',
                   ],
-                  'active' => true,
                   'index$' => 0,
                 ],
               ],
-              'input' => 'data',
               'key$' => 'load',
             ],
           ],

@@ -1,19 +1,8 @@
 # MetropolitanoDeLisboa SDK
 
-Live line-status feed for the Lisbon Metro network
+Metropolitano de Lisboa client, generated from the OpenAPI spec.
 
 > TypeScript, Python, PHP, Golang, Ruby, Lua SDKs, a CLI, an interactive REPL, and an MCP server for AI agents — all generated from one OpenAPI spec by [@voxgig/sdkgen](https://github.com/voxgig/sdkgen).
-
-## About Metropolitano de Lisboa
-
-This SDK wraps the public status endpoint exposed by [Metropolitano de Lisboa, E.P.E.](https://www.metrolisboa.pt/), the operator of the Lisbon underground rail network. The service is intended to surface the current operating state of each metro line so that trip-planning apps and information displays can show passengers whether their line is running normally or facing disruption.
-
-What you get from the API:
-
-- Current operating status for each metro line in the Lisbon network (for example the Blue, Yellow, Green, Red and Circular lines).
-- A simple HTTP `GET` interface returning the latest snapshot from the metro's status feed.
-
-Operational notes: the upstream endpoint is documented as unauthenticated and returns small payloads quickly, but CORS is not enabled, so browser-side calls will need a proxy. No public rate limit is published; treat the feed as a courtesy service and cache responses rather than polling aggressively.
 
 ## Try it
 
@@ -47,27 +36,31 @@ gem install metropolitano-de-lisboa-sdk
 luarocks install metropolitano-de-lisboa-sdk
 ```
 
-## 30-second quickstart
+## Quickstart
 
 ### TypeScript
 
 ```ts
 import { MetropolitanoDeLisboaSDK } from 'metropolitano-de-lisboa'
 
-const client = new MetropolitanoDeLisboaSDK({})
+const client = new MetropolitanoDeLisboaSDK({
+  apikey: process.env.METROPOLITANO-DE-LISBOA_APIKEY,
+})
 
+// Load network data
+const network = await client.Network().load({})
+console.log(network.data)
 ```
 
-See the [TypeScript README](ts/README.md) for the
-full guide, or scroll down for the same example in other languages.
+See the [TypeScript README](ts/README.md) for the full guide.
 
-## What's in the box
+## Surfaces
 
-| Surface | Use it for | Path |
-| --- | --- | --- |
-| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | App integration | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
-| **CLI** | Scripts, CI, ops, one-off API calls | `go-cli/` |
-| **MCP server** | AI agents (Claude, Cursor, Cline) | `go-mcp/` |
+| Surface | Path |
+| --- | --- |
+| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
+| **CLI** | `go-cli/` |
+| **MCP server** | `go-mcp/` |
 
 ## Use it from an AI agent (MCP)
 
@@ -97,7 +90,7 @@ The API exposes one entity:
 
 | Entity | Description | API path |
 | --- | --- | --- |
-| **Network** | Network-wide status information for the Lisbon Metro, surfaced through the line-status endpoint (e.g. `GET /status/getLinhas.php`). | `/network` |
+| **Network** |  | `/network` |
 
 Each entity supports the following operations where available: **load**,
 **list**, **create**, **update**, and **remove**.
@@ -107,15 +100,17 @@ Each entity supports the following operations where available: **load**,
 ### Python
 
 ```python
+import os
 from metropolitanodelisboa_sdk import MetropolitanoDeLisboaSDK
 
-client = MetropolitanoDeLisboaSDK({})
+client = MetropolitanoDeLisboaSDK({
+    "apikey": os.environ.get("METROPOLITANO-DE-LISBOA_APIKEY"),
+})
 
 
 # Load a specific network
-network, err = client.Network(None).load(
-    {"id": "example_id"}, None
-)
+network, err = client.Network().load({"id": "example_id"})
+print(network)
 ```
 
 ### PHP
@@ -124,13 +119,14 @@ network, err = client.Network(None).load(
 <?php
 require_once 'metropolitanodelisboa_sdk.php';
 
-$client = new MetropolitanoDeLisboaSDK([]);
+$client = new MetropolitanoDeLisboaSDK([
+    "apikey" => getenv("METROPOLITANO-DE-LISBOA_APIKEY"),
+]);
 
 
 // Load a specific network
-[$network, $err] = $client->Network(null)->load(
-    ["id" => "example_id"], null
-);
+[$network, $err] = $client->Network()->load(["id" => "example_id"]);
+print_r($network);
 ```
 
 ### Golang
@@ -138,8 +134,13 @@ $client = new MetropolitanoDeLisboaSDK([]);
 ```go
 import sdk "github.com/voxgig-sdk/metropolitano-de-lisboa-sdk/go"
 
-client := sdk.NewMetropolitanoDeLisboaSDK(map[string]any{})
+client := sdk.NewMetropolitanoDeLisboaSDK(map[string]any{
+    "apikey": os.Getenv("METROPOLITANO-DE-LISBOA_APIKEY"),
+})
 
+// Load network data
+network, err := client.Network(nil).Load(map[string]any{}, nil)
+fmt.Println(network)
 ```
 
 ### Ruby
@@ -147,13 +148,14 @@ client := sdk.NewMetropolitanoDeLisboaSDK(map[string]any{})
 ```ruby
 require_relative "MetropolitanoDeLisboa_sdk"
 
-client = MetropolitanoDeLisboaSDK.new({})
+client = MetropolitanoDeLisboaSDK.new({
+  "apikey" => ENV["METROPOLITANO-DE-LISBOA_APIKEY"],
+})
 
 
 # Load a specific network
-network, err = client.Network(nil).load(
-  { "id" => "example_id" }, nil
-)
+network, err = client.Network().load({ "id" => "example_id" })
+puts network
 ```
 
 ### Lua
@@ -161,13 +163,14 @@ network, err = client.Network(nil).load(
 ```lua
 local sdk = require("metropolitano-de-lisboa_sdk")
 
-local client = sdk.new({})
+local client = sdk.new({
+  apikey = os.getenv("METROPOLITANO-DE-LISBOA_APIKEY"),
+})
 
 
 -- Load a specific network
-local network, err = client:Network(nil):load(
-  { id = "example_id" }, nil
-)
+local network, err = client:Network():load({ id = "example_id" })
+print(network)
 ```
 
 ## Unit testing in offline mode
@@ -186,25 +189,21 @@ const result = await client.Network().load({ id: 'test01' })
 ### Python
 
 ```python
-client = MetropolitanoDeLisboaSDK.test(None, None)
-result, err = client.Network(None).load(
-    {"id": "test01"}, None
-)
+client = MetropolitanoDeLisboaSDK.test()
+result, err = client.Network().load({"id": "test01"})
 ```
 
 ### PHP
 
 ```php
-$client = MetropolitanoDeLisboaSDK::test(null, null);
-[$result, $err] = $client->Network(null)->load(
-    ["id" => "test01"], null
-);
+$client = MetropolitanoDeLisboaSDK::test();
+[$result, $err] = $client->Network()->load(["id" => "test01"]);
 ```
 
 ### Golang
 
 ```go
-client := sdk.TestSDK(nil, nil)
+client := sdk.Test()
 result, err := client.Network(nil).Load(
     map[string]any{"id": "test01"}, nil,
 )
@@ -213,19 +212,15 @@ result, err := client.Network(nil).Load(
 ### Ruby
 
 ```ruby
-client = MetropolitanoDeLisboaSDK.test(nil, nil)
-result, err = client.Network(nil).load(
-  { "id" => "test01" }, nil
-)
+client = MetropolitanoDeLisboaSDK.test
+result, err = client.Network().load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
-local client = sdk.test(nil, nil)
-local result, err = client:Network(nil):load(
-  { id = "test01" }, nil
-)
+local client = sdk.test()
+local result, err = client:Network():load({ id = "test01" })
 ```
 
 ## How it works
@@ -329,14 +324,6 @@ local result, err = client:direct({
 - [Golang](go/README.md)
 - [Ruby](rb/README.md)
 - [Lua](lua/README.md)
-
-## Using the Metropolitano de Lisboa
-
-- Upstream: [https://www.metrolisboa.pt/](https://www.metrolisboa.pt/)
-
-- The API is published by Metropolitano de Lisboa, E.P.E. without an explicit open data licence.
-- Attribution to Metropolitano de Lisboa is recommended when reusing the data.
-- Consult [metrolisboa.pt](https://www.metrolisboa.pt/) for any terms of use before redistributing responses.
 
 ---
 

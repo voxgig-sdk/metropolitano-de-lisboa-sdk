@@ -99,12 +99,14 @@ func networkDirectSetup(mockres any) *networkDirectSetupResult {
 	env := envOverride(map[string]any{
 		"METROPOLITANODELISBOA_TEST_NETWORK_ENTID": map[string]any{},
 		"METROPOLITANODELISBOA_TEST_LIVE":    "FALSE",
+		"METROPOLITANODELISBOA_APIKEY":       "NONE",
 	})
 
 	live := env["METROPOLITANODELISBOA_TEST_LIVE"] == "TRUE"
 
 	if live {
 		mergedOpts := map[string]any{
+			"apikey": env["METROPOLITANODELISBOA_APIKEY"],
 		}
 		client := sdk.NewMetropolitanoDeLisboaSDK(mergedOpts)
 

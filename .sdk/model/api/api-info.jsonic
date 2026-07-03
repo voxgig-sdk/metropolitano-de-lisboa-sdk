@@ -17,25 +17,7 @@ main: {
       ]
       title: "Metropolitano de Lisboa"
       version: "1.0.0"
-      tagline: "Live line-status feed for the Lisbon Metro network"
-      homepage: "https://www.metrolisboa.pt/"
-      docs_url: "https://www.metrolisboa.pt/"
-      license_short: "No public licence published; check with Metropolitano de Lisboa before redistribution."
-      license_md: `- The API is published by Metropolitano de Lisboa, E.P.E. without an explicit open data licence.
-- Attribution to Metropolitano de Lisboa is recommended when reusing the data.
-- Consult [metrolisboa.pt](https://www.metrolisboa.pt/) for any terms of use before redistributing responses.`
-      about_md: `This SDK wraps the public status endpoint exposed by [Metropolitano de Lisboa, E.P.E.](https://www.metrolisboa.pt/), the operator of the Lisbon underground rail network. The service is intended to surface the current operating state of each metro line so that trip-planning apps and information displays can show passengers whether their line is running normally or facing disruption.
-
-What you get from the API:
-
-- Current operating status for each metro line in the Lisbon network (for example the Blue, Yellow, Green, Red and Circular lines).
-- A simple HTTP \`GET\` interface returning the latest snapshot from the metro's status feed.
-
-Operational notes: the upstream endpoint is documented as unauthenticated and returns small payloads quickly, but CORS is not enabled, so browser-side calls will need a proxy. No public rate limit is published; treat the feed as a courtesy service and cache responses rather than polling aggressively.`
-      entity_desc: {
-        network: "Network-wide status information for the Lisbon Metro, surfaced through the line-status endpoint (e.g. `GET /status/getLinhas.php`)."
-      }
-      auth: false
     }
   }
 }
+

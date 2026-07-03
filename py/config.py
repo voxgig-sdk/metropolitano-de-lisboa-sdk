@@ -15,6 +15,9 @@ def make_config():
         },
         "options": {
             "base": "https://api.metrolisboa.pt/v1",
+            "auth": {
+                "prefix": "Bearer",
+            },
             "headers": {
         "content-type": "application/json",
       },
@@ -26,46 +29,48 @@ def make_config():
       "network": {
         "fields": [
           {
+            "active": True,
             "name": "network",
             "req": False,
             "type": "`$OBJECT`",
-            "active": True,
             "index$": 0,
           },
         ],
         "name": "network",
         "op": {
           "load": {
+            "input": "data",
             "name": "load",
             "points": [
               {
+                "active": True,
                 "args": {
                   "query": [
                     {
+                      "active": True,
                       "example": False,
                       "kind": "query",
                       "name": "historical",
                       "orig": "historical",
                       "reqd": False,
                       "type": "`$BOOLEAN`",
-                      "active": True,
                     },
                     {
+                      "active": True,
                       "example": "stations,lines",
                       "kind": "query",
                       "name": "include",
                       "orig": "include",
                       "reqd": False,
                       "type": "`$STRING`",
-                      "active": True,
                     },
                     {
+                      "active": True,
                       "kind": "query",
                       "name": "line",
                       "orig": "line",
                       "reqd": False,
                       "type": "`$STRING`",
-                      "active": True,
                     },
                   ],
                 },
@@ -83,13 +88,11 @@ def make_config():
                 },
                 "transform": {
                   "req": "`reqdata`",
-                  "res": "`body`",
+                  "res": "`body.network`",
                 },
-                "active": True,
                 "index$": 0,
               },
             ],
-            "input": "data",
             "key$": "load",
           },
         },

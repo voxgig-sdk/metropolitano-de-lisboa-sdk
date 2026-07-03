@@ -85,6 +85,7 @@ function network_basic_setup($extra)
         "METROPOLITANODELISBOA_TEST_NETWORK_ENTID" => $idmap,
         "METROPOLITANODELISBOA_TEST_LIVE" => "FALSE",
         "METROPOLITANODELISBOA_TEST_EXPLAIN" => "FALSE",
+        "METROPOLITANODELISBOA_APIKEY" => "NONE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
@@ -96,6 +97,7 @@ function network_basic_setup($extra)
     if ($env["METROPOLITANODELISBOA_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
+                "apikey" => $env["METROPOLITANODELISBOA_APIKEY"],
             ],
             $extra ?? [],
         ]);

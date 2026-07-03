@@ -113,6 +113,7 @@ function basicSetup(extra?: any) {
     'METROPOLITANO_DE_LISBOA_TEST_NETWORK_ENTID': idmap,
     'METROPOLITANO_DE_LISBOA_TEST_LIVE': 'FALSE',
     'METROPOLITANO_DE_LISBOA_TEST_EXPLAIN': 'FALSE',
+    'METROPOLITANO_DE_LISBOA_APIKEY': 'NONE',
   })
 
   idmap = env['METROPOLITANO_DE_LISBOA_TEST_NETWORK_ENTID']
@@ -122,6 +123,7 @@ function basicSetup(extra?: any) {
   if (live) {
     client = new MetropolitanoDeLisboaSDK(merge([
       {
+        apikey: env.METROPOLITANO_DE_LISBOA_APIKEY,
       },
       extra
     ]))

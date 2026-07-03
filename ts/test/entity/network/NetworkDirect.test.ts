@@ -74,12 +74,14 @@ function directSetup(mockres?: any) {
   const env = envOverride({
     'METROPOLITANODELISBOA_TEST_NETWORK_ENTID': {},
     'METROPOLITANODELISBOA_TEST_LIVE': 'FALSE',
+    'METROPOLITANODELISBOA_APIKEY': 'NONE',
   })
 
   const live = 'TRUE' === env.METROPOLITANODELISBOA_TEST_LIVE
 
   if (live) {
     const client = new MetropolitanoDeLisboaSDK({
+      apikey: env.METROPOLITANODELISBOA_APIKEY,
     })
 
     let idmap: any = env['METROPOLITANODELISBOA_TEST_NETWORK_ENTID']
