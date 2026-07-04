@@ -26,9 +26,9 @@ import { MetropolitanoDeLisboaSDK } from '@voxgig-sdk/metropolitano-de-lisboa'
 
 const client = new MetropolitanoDeLisboaSDK()
 
-// Load network data
-const network = await client.network.load({})
-console.log(network.data)
+// Load network data (returns a Network)
+const network = await client.Network().load()
+console.log(network)
 ```
 
 See the [TypeScript README](ts/README.md) for the full guide.
@@ -84,8 +84,8 @@ from metropolitanodelisboa_sdk import MetropolitanoDeLisboaSDK
 client = MetropolitanoDeLisboaSDK()
 
 
-# Load a specific network
-network = client.network.load({"id": "example_id"})
+# Load a specific network (returns the record, raises on error)
+network = client.Network().load({"id": "example_id"})
 print(network)
 ```
 
@@ -98,8 +98,8 @@ require_once 'metropolitanodelisboa_sdk.php';
 $client = new MetropolitanoDeLisboaSDK();
 
 
-// Load a specific network
-$network = $client->network()->load(["id" => "example_id"]);
+// Load a specific network (returns the bare record; throws on error)
+$network = $client->Network()->load(["id" => "example_id"]);
 print_r($network);
 ```
 
@@ -123,8 +123,8 @@ require_relative "MetropolitanoDeLisboa_sdk"
 client = MetropolitanoDeLisboaSDK.new
 
 
-# Load a specific network
-network = client.network.load({ "id" => "example_id" })
+# Load a specific network (returns the bare record; raises on error)
+network = client.Network.load({ "id" => "example_id" })
 puts network
 ```
 
@@ -137,7 +137,7 @@ local client = sdk.new()
 
 
 -- Load a specific network
-local network, err = client:network():load({ id = "example_id" })
+local network, err = client:Network():load({ id = "example_id" })
 print(network)
 ```
 
@@ -150,22 +150,27 @@ in-memory mock, so unit tests run offline.
 
 ```ts
 const client = MetropolitanoDeLisboaSDK.test()
-const result = await client.network.load({ id: 'test01' })
-// result.ok === true, result.data contains mock data
+const network = await client.Network().load({ id: 'test01' })
+// network is a bare Network populated with mock data
+console.log(network)
 ```
 
 ### Python
 
 ```python
 client = MetropolitanoDeLisboaSDK.test()
-result = client.network.load({"id": "test01"})
+network = client.Network().load({"id": "test01"})
+print(network)
 ```
 
 ### PHP
 
 ```php
-$client = MetropolitanoDeLisboaSDK::test();
-$result = $client->network()->load(["id" => "test01"]);
+// Seed fixture data so offline calls resolve without a live server.
+$client = MetropolitanoDeLisboaSDK::test([
+    "entity" => ["network" => ["test01" => ["id" => "test01"]]],
+]);
+$network = $client->Network()->load(["id" => "test01"]);
 ```
 
 ### Golang
@@ -180,15 +185,18 @@ result, err := client.Network(nil).Load(
 ### Ruby
 
 ```ruby
-client = MetropolitanoDeLisboaSDK.test
-result = client.network.load({ "id" => "test01" })
+# Seed fixture data so offline calls resolve without a live server.
+client = MetropolitanoDeLisboaSDK.test({
+  "entity" => { "network" => { "test01" => { "id" => "test01" } } },
+})
+network = client.Network.load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
 local client = sdk.test()
-local result, err = client:network():load({ id = "test01" })
+local result, err = client:Network():load({ id = "test01" })
 ```
 
 ## How it works
@@ -236,6 +244,9 @@ const result = await client.direct({
   method: 'GET',
   params: { id: 'example' },
 })
+if (result instanceof Error) {
+  throw result
+}
 console.log(result.data)
 ```
 

@@ -85,7 +85,7 @@ Prepare a fetch definition without sending the request. Returns the
 ## NetworkEntity
 
 ```php
-$network = $client->network();
+$network = $client->Network();
 ```
 
 ### Fields
@@ -101,7 +101,7 @@ $network = $client->network();
 Load a single entity matching the given criteria. Throws on error.
 
 ```php
-$result = $client->network()->load(["id" => "network_id"]);
+$result = $client->Network()->load(["id" => "network_id"]);
 ```
 
 ### Common Methods

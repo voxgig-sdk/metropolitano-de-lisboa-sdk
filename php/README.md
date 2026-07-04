@@ -33,9 +33,10 @@ $client = new MetropolitanoDeLisboaSDK();
 
 ```php
 try {
-    $result = $client->network()->load(["id" => "example_id"]);
-    print_r($result);
-} catch (\Exception $err) {
+    // load() returns the bare Network record (throws on error).
+    $network = $client->Network()->load(["id" => "example_id"]);
+    print_r($network);
+} catch (\Throwable $err) {
     echo "Error: " . $err->getMessage();
 }
 ```
@@ -81,13 +82,17 @@ print_r($fetchdef["headers"]);
 
 ### Use test mode
 
-Create a mock client for unit testing — no server required:
+Create a mock client for unit testing — no server required. Seed fixture
+data via the `entity` option so offline calls resolve without a live server:
 
 ```php
-$client = MetropolitanoDeLisboaSDK::test();
+$client = MetropolitanoDeLisboaSDK::test([
+    "entity" => ["network" => ["test01" => ["id" => "test01"]]],
+]);
 
-$result = $client->network()->load(["id" => "test01"]);
-// $result contains mock response data
+// load() returns the bare mock record (throws on error).
+$network = $client->Network()->load(["id" => "test01"]);
+print_r($network);
 ```
 
 ### Use a custom fetch function
@@ -223,7 +228,7 @@ API path: `/network`
 
 ### Network
 
-Create an instance: `const network = client.network`
+Create an instance: `$network = $client->Network();`
 
 #### Operations
 
@@ -239,8 +244,9 @@ Create an instance: `const network = client.network`
 
 #### Example: Load
 
-```ts
-const network = await client.network.load({ id: 'network_id' })
+```php
+// load() returns the bare Network record (throws on error).
+$network = $client->Network()->load(["id" => "network_id"]);
 ```
 
 
@@ -315,7 +321,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```php
-$network = $client->network();
+$network = $client->Network();
 $network->load(["id" => "example_id"]);
 
 // $network->dataGet() now returns the loaded network data

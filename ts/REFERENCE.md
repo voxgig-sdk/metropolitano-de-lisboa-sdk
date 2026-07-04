@@ -109,7 +109,7 @@ Alias for `MetropolitanoDeLisboaSDK.test()`.
 ## NetworkEntity
 
 ```ts
-const network = client.network
+const network = client.Network()
 ```
 
 ### Fields
@@ -125,7 +125,7 @@ const network = client.network
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.network.load({ id: 'network_id' })
+const result = await client.Network().load({ id: 'network_id' })
 ```
 
 ### Common Methods

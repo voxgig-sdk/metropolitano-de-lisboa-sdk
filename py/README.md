@@ -33,10 +33,12 @@ client = MetropolitanoDeLisboaSDK()
 
 ### 3. Load a network
 
+`load()` returns the bare record (a `dict`) and raises on error.
+
 ```python
 try:
-    result = client.network.load({"id": "example_id"})
-    print(result)
+    network = client.Network().load({"id": "example_id"})
+    print(network)
 except Exception as err:
     print(f"load failed: {err}")
 ```
@@ -84,8 +86,9 @@ Create a mock client for unit testing — no server required:
 ```python
 client = MetropolitanoDeLisboaSDK.test()
 
-result = client.network.load({"id": "test01"})
-# result contains mock response data
+# Entity ops return the bare record and raise on error.
+network = client.Network().load({"id": "test01"})
+# network contains the mock response record
 ```
 
 ### Use a custom fetch function
@@ -218,7 +221,7 @@ API path: `/network`
 
 ### Network
 
-Create an instance: `const network = client.network`
+Create an instance: `network = client.Network()`
 
 #### Operations
 
@@ -234,8 +237,8 @@ Create an instance: `const network = client.network`
 
 #### Example: Load
 
-```ts
-const network = await client.network.load({ id: 'network_id' })
+```python
+network = client.Network().load({"id": "network_id"})
 ```
 
 
@@ -309,7 +312,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```python
-network = client.network
+network = client.Network()
 network.load({"id": "example_id"})
 
 # network.data_get() now returns the loaded network data
