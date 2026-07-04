@@ -45,6 +45,7 @@ class NetworkEntity
     end
   end
 
+  # @return [Network, Hash] the current Network data
   def data_get
     @_utility.feature_hook.call(@_entctx, "GetData")
     VoxgigStruct.clone(@_data)
@@ -57,12 +58,18 @@ class NetworkEntity
     end
   end
 
+  # @return [Hash] the current match filter (any subset of Network fields)
   def match_get
     @_utility.feature_hook.call(@_entctx, "GetMatch")
     VoxgigStruct.clone(@_match)
   end
 
   
+  # Load a single Network.
+  #
+  # @param reqmatch [NetworkLoadMatch, Hash, nil] match criteria (id/query fields)
+  # @param ctrl [Object, nil] optional per-call control
+  # @return [Network, Hash] the loaded Network; raises MetropolitanoDeLisboaError on failure
   def load(reqmatch, ctrl = nil)
     utility = @_utility
     ctx = utility.make_context.call({

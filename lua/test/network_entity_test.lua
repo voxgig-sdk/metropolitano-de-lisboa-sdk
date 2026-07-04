@@ -91,7 +91,6 @@ function network_basic_setup(extra)
     ["METROPOLITANODELISBOA_TEST_NETWORK_ENTID"] = idmap,
     ["METROPOLITANODELISBOA_TEST_LIVE"] = "FALSE",
     ["METROPOLITANODELISBOA_TEST_EXPLAIN"] = "FALSE",
-    ["METROPOLITANODELISBOA_APIKEY"] = "NONE",
   })
 
   local idmap_resolved = helpers.to_map(
@@ -103,7 +102,6 @@ function network_basic_setup(extra)
   if env["METROPOLITANODELISBOA_TEST_LIVE"] == "TRUE" then
     local merged_opts = vs.merge({
       {
-        apikey = env["METROPOLITANODELISBOA_APIKEY"],
       },
       extra or {},
     })

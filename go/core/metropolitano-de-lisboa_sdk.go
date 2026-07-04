@@ -245,6 +245,9 @@ func (sdk *MetropolitanoDeLisboaSDK) Direct(fetchargs map[string]any) (map[strin
 }
 
 
+// Network returns a Network entity bound to this client.
+// Idiomatic usage: client.Network(nil).List(nil, nil) or
+// client.Network(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *MetropolitanoDeLisboaSDK) Network(data map[string]any) MetropolitanoDeLisboaEntity {
 	return NewNetworkEntityFunc(sdk, data)
 }

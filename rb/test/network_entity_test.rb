@@ -42,8 +42,7 @@ class NetworkEntityTest < Minitest::Test
     # LOAD
     network_ref01_ent = client.Network(nil)
     network_ref01_match_dt0 = {}
-    network_ref01_data_dt0_loaded, err = network_ref01_ent.load(network_ref01_match_dt0, nil)
-    assert_nil err
+    network_ref01_data_dt0_loaded = network_ref01_ent.load(network_ref01_match_dt0, nil)
     assert !network_ref01_data_dt0_loaded.nil?
 
   end
@@ -82,7 +81,6 @@ def network_basic_setup(extra)
     "METROPOLITANODELISBOA_TEST_NETWORK_ENTID" => idmap,
     "METROPOLITANODELISBOA_TEST_LIVE" => "FALSE",
     "METROPOLITANODELISBOA_TEST_EXPLAIN" => "FALSE",
-    "METROPOLITANODELISBOA_APIKEY" => "NONE",
   })
 
   idmap_resolved = Helpers.to_map(
@@ -94,7 +92,6 @@ def network_basic_setup(extra)
   if env["METROPOLITANODELISBOA_TEST_LIVE"] == "TRUE"
     merged_opts = Vs.merge([
       {
-        "apikey" => env["METROPOLITANODELISBOA_APIKEY"],
       },
       extra || {},
     ])

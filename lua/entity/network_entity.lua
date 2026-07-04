@@ -79,6 +79,10 @@ end
 
 
 
+---@param reqmatch NetworkLoadMatch
+---@param ctrl? table
+---@return Network
+---@return string? err
 function NetworkEntity:load(reqmatch, ctrl)
   local utility = self._utility
   local ctx = utility.make_context({

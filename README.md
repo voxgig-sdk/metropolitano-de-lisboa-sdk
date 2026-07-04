@@ -10,26 +10,24 @@ This is an unofficial SDK for the Metropolitano de Lisboa public API, generated 
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/metropolitano-de-lisboa` | `npm install @voxgig-sdk/metropolitano-de-lisboa` |
-| Python | `voxgig-sdk-metropolitano-de-lisboa` | `pip install voxgig-sdk-metropolitano-de-lisboa` |
-| PHP | `voxgig-sdk/metropolitano-de-lisboa` | `composer require voxgig-sdk/metropolitano-de-lisboa` |
-| Golang | `github.com/voxgig-sdk/metropolitano-de-lisboa-sdk/go` | `go get github.com/voxgig-sdk/metropolitano-de-lisboa-sdk/go` |
-| Ruby | `voxgig-sdk-metropolitano-de-lisboa` | `gem install voxgig-sdk-metropolitano-de-lisboa` |
-| Lua | `voxgig-sdk-metropolitano-de-lisboa` | `luarocks install voxgig-sdk-metropolitano-de-lisboa` |
+| TypeScript | `@voxgig-sdk/metropolitano-de-lisboa` | publish pending — [install from git tag](https://github.com/voxgig-sdk/metropolitano-de-lisboa-sdk/releases) |
+| Python | `voxgig-sdk-metropolitano-de-lisboa` | publish pending — [install from git tag](https://github.com/voxgig-sdk/metropolitano-de-lisboa-sdk/releases) |
+| PHP | `voxgig-sdk/metropolitano-de-lisboa` | publish pending — [install from git tag](https://github.com/voxgig-sdk/metropolitano-de-lisboa-sdk/releases) |
+| Golang | `github.com/voxgig-sdk/metropolitano-de-lisboa-sdk/go` | `go get github.com/voxgig-sdk/metropolitano-de-lisboa-sdk/go@latest` |
+| Ruby | `voxgig-sdk-metropolitano-de-lisboa` | publish pending — [install from git tag](https://github.com/voxgig-sdk/metropolitano-de-lisboa-sdk/releases) |
+| Lua | `voxgig-sdk-metropolitano-de-lisboa` | publish pending — [install from git tag](https://github.com/voxgig-sdk/metropolitano-de-lisboa-sdk/releases) |
 
 ## Quickstart
 
 ### TypeScript
 
 ```ts
-import { MetropolitanoDeLisboaSDK } from 'metropolitano-de-lisboa'
+import { MetropolitanoDeLisboaSDK } from '@voxgig-sdk/metropolitano-de-lisboa'
 
-const client = new MetropolitanoDeLisboaSDK({
-  apikey: process.env.METROPOLITANO-DE-LISBOA_APIKEY,
-})
+const client = new MetropolitanoDeLisboaSDK()
 
 // Load network data
-const network = await client.Network().load({})
+const network = await client.network.load({})
 console.log(network.data)
 ```
 
@@ -71,7 +69,7 @@ The API exposes one entity:
 
 | Entity | Description | API path |
 | --- | --- | --- |
-| **Network** |  | `/network` |
+| **Network** | The Network entity (load). | `/network` |
 
 Each entity supports the following operations where available: **load**,
 **list**, **create**, **update**, and **remove**.
@@ -81,16 +79,13 @@ Each entity supports the following operations where available: **load**,
 ### Python
 
 ```python
-import os
 from metropolitanodelisboa_sdk import MetropolitanoDeLisboaSDK
 
-client = MetropolitanoDeLisboaSDK({
-    "apikey": os.environ.get("METROPOLITANO-DE-LISBOA_APIKEY"),
-})
+client = MetropolitanoDeLisboaSDK()
 
 
 # Load a specific network
-network, err = client.Network().load({"id": "example_id"})
+network = client.network.load({"id": "example_id"})
 print(network)
 ```
 
@@ -100,13 +95,11 @@ print(network)
 <?php
 require_once 'metropolitanodelisboa_sdk.php';
 
-$client = new MetropolitanoDeLisboaSDK([
-    "apikey" => getenv("METROPOLITANO-DE-LISBOA_APIKEY"),
-]);
+$client = new MetropolitanoDeLisboaSDK();
 
 
 // Load a specific network
-[$network, $err] = $client->Network()->load(["id" => "example_id"]);
+$network = $client->network()->load(["id" => "example_id"]);
 print_r($network);
 ```
 
@@ -115,9 +108,7 @@ print_r($network);
 ```go
 import sdk "github.com/voxgig-sdk/metropolitano-de-lisboa-sdk/go"
 
-client := sdk.NewMetropolitanoDeLisboaSDK(map[string]any{
-    "apikey": os.Getenv("METROPOLITANO-DE-LISBOA_APIKEY"),
-})
+client := sdk.New()
 
 // Load network data
 network, err := client.Network(nil).Load(map[string]any{}, nil)
@@ -129,13 +120,11 @@ fmt.Println(network)
 ```ruby
 require_relative "MetropolitanoDeLisboa_sdk"
 
-client = MetropolitanoDeLisboaSDK.new({
-  "apikey" => ENV["METROPOLITANO-DE-LISBOA_APIKEY"],
-})
+client = MetropolitanoDeLisboaSDK.new
 
 
 # Load a specific network
-network, err = client.Network().load({ "id" => "example_id" })
+network = client.network.load({ "id" => "example_id" })
 puts network
 ```
 
@@ -144,13 +133,11 @@ puts network
 ```lua
 local sdk = require("metropolitano-de-lisboa_sdk")
 
-local client = sdk.new({
-  apikey = os.getenv("METROPOLITANO-DE-LISBOA_APIKEY"),
-})
+local client = sdk.new()
 
 
 -- Load a specific network
-local network, err = client:Network():load({ id = "example_id" })
+local network, err = client:network():load({ id = "example_id" })
 print(network)
 ```
 
@@ -163,7 +150,7 @@ in-memory mock, so unit tests run offline.
 
 ```ts
 const client = MetropolitanoDeLisboaSDK.test()
-const result = await client.Network().load({ id: 'test01' })
+const result = await client.network.load({ id: 'test01' })
 // result.ok === true, result.data contains mock data
 ```
 
@@ -171,14 +158,14 @@ const result = await client.Network().load({ id: 'test01' })
 
 ```python
 client = MetropolitanoDeLisboaSDK.test()
-result, err = client.Network().load({"id": "test01"})
+result = client.network.load({"id": "test01"})
 ```
 
 ### PHP
 
 ```php
 $client = MetropolitanoDeLisboaSDK::test();
-[$result, $err] = $client->Network()->load(["id" => "test01"]);
+$result = $client->network()->load(["id" => "test01"]);
 ```
 
 ### Golang
@@ -194,14 +181,14 @@ result, err := client.Network(nil).Load(
 
 ```ruby
 client = MetropolitanoDeLisboaSDK.test
-result, err = client.Network().load({ "id" => "test01" })
+result = client.network.load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
 local client = sdk.test()
-local result, err = client:Network():load({ id = "test01" })
+local result, err = client:network():load({ id = "test01" })
 ```
 
 ## How it works
@@ -254,7 +241,7 @@ console.log(result.data)
 
 **Python:**
 ```python
-result, err = client.direct({
+result = client.direct({
     "path": "/api/resource/{id}",
     "method": "GET",
     "params": {"id": "example"},
@@ -263,7 +250,7 @@ result, err = client.direct({
 
 **PHP:**
 ```php
-[$result, $err] = $client->direct([
+$result = $client->direct([
     "path" => "/api/resource/{id}",
     "method" => "GET",
     "params" => ["id" => "example"],
@@ -281,7 +268,7 @@ result, err := client.Direct(map[string]any{
 
 **Ruby:**
 ```ruby
-result, err = client.direct({
+result = client.direct({
   "path" => "/api/resource/{id}",
   "method" => "GET",
   "params" => { "id" => "example" },

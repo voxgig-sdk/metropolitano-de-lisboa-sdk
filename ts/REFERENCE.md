@@ -18,7 +18,6 @@ Create a new SDK client instance.
 | Name | Type | Description |
 | --- | --- | --- |
 | `options` | `object` | SDK configuration options. |
-| `options.apikey` | `string` | API key for authentication. |
 | `options.base` | `string` | Base URL for API requests. |
 | `options.prefix` | `string` | URL prefix appended after base. |
 | `options.suffix` | `string` | URL suffix appended after path. |
@@ -110,7 +109,7 @@ Alias for `MetropolitanoDeLisboaSDK.test()`.
 ## NetworkEntity
 
 ```ts
-const network = client.Network()
+const network = client.network
 ```
 
 ### Fields
@@ -126,7 +125,7 @@ const network = client.Network()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.Network().load({ id: 'network_id' })
+const result = await client.network.load({ id: 'network_id' })
 ```
 
 ### Common Methods

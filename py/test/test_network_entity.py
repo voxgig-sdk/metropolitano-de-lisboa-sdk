@@ -49,8 +49,7 @@ class TestNetworkEntity:
         # LOAD
         network_ref01_ent = client.Network(None)
         network_ref01_match_dt0 = {}
-        network_ref01_data_dt0_loaded, err = network_ref01_ent.load(network_ref01_match_dt0, None)
-        assert err is None
+        network_ref01_data_dt0_loaded = network_ref01_ent.load(network_ref01_match_dt0, None)
         assert network_ref01_data_dt0_loaded is not None
 
 
@@ -91,7 +90,6 @@ def _network_basic_setup(extra):
         "METROPOLITANODELISBOA_TEST_NETWORK_ENTID": idmap,
         "METROPOLITANODELISBOA_TEST_LIVE": "FALSE",
         "METROPOLITANODELISBOA_TEST_EXPLAIN": "FALSE",
-        "METROPOLITANODELISBOA_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -102,7 +100,6 @@ def _network_basic_setup(extra):
     if env.get("METROPOLITANODELISBOA_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
-                "apikey": env.get("METROPOLITANODELISBOA_APIKEY"),
             },
             extra or {},
         ])

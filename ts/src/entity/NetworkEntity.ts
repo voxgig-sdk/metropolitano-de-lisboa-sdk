@@ -14,9 +14,13 @@ import type {
   Control,
 } from '../types'
 
+import type {
+  Network,
+  NetworkLoadMatch,
+} from '../MetropolitanoDeLisboaTypes'
 
 // TODO: needs Entity superclass
-class NetworkEntity extends MetropolitanoDeLisboaEntityBase {
+class NetworkEntity extends MetropolitanoDeLisboaEntityBase<Network> {
 
   constructor(client: MetropolitanoDeLisboaSDK, entopts: any) {
     super(client, entopts)
@@ -32,7 +36,7 @@ class NetworkEntity extends MetropolitanoDeLisboaEntityBase {
 
 
 
-  async load(this: any, reqmatch?: any, ctrl?: Control) {
+  async load(this: any, reqmatch?: NetworkLoadMatch, ctrl?: Control): Promise<Network> {
 
     const utility = this._utility
 
@@ -136,7 +140,9 @@ class NetworkEntity extends MetropolitanoDeLisboaEntityBase {
         throw err
       }
       else {
-        return undefined
+        // Off-happy-path (throw disabled): typed as any so the method's
+        // Promise<Network> return stays clean under strict null checks.
+        return undefined as any
       }
     }
   }

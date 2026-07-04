@@ -49,8 +49,7 @@ class NetworkEntityTest extends TestCase
         // LOAD
         $network_ref01_ent = $client->Network(null);
         $network_ref01_match_dt0 = [];
-        [$network_ref01_data_dt0_loaded, $err] = $network_ref01_ent->load($network_ref01_match_dt0, null);
-        $this->assertNull($err);
+        $network_ref01_data_dt0_loaded = $network_ref01_ent->load($network_ref01_match_dt0, null);
         $this->assertNotNull($network_ref01_data_dt0_loaded);
 
     }
@@ -85,7 +84,6 @@ function network_basic_setup($extra)
         "METROPOLITANODELISBOA_TEST_NETWORK_ENTID" => $idmap,
         "METROPOLITANODELISBOA_TEST_LIVE" => "FALSE",
         "METROPOLITANODELISBOA_TEST_EXPLAIN" => "FALSE",
-        "METROPOLITANODELISBOA_APIKEY" => "NONE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
@@ -97,7 +95,6 @@ function network_basic_setup($extra)
     if ($env["METROPOLITANODELISBOA_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
-                "apikey" => $env["METROPOLITANODELISBOA_APIKEY"],
             ],
             $extra ?? [],
         ]);

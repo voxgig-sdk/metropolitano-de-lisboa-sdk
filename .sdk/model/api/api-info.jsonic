@@ -4,6 +4,7 @@
 main: {
   kit: {
     info: {
+      auth: false
       contact: {
         name: "Metropolitano de Lisboa"
         url: "https://www.metrolisboa.pt/"
