@@ -13,8 +13,7 @@ type Network struct {
 	Network *map[string]any `json:"network,omitempty"`
 }
 
-// NetworkLoadMatch mirrors the network fields as an all-optional match
-// filter (Go analog of Partial<Network>).
+// NetworkLoadMatch is the typed request payload for Network.LoadTyped.
 type NetworkLoadMatch struct {
 	Network *map[string]any `json:"network,omitempty"`
 }

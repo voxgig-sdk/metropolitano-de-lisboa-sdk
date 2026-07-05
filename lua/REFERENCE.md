@@ -90,7 +90,7 @@ local network = client:Network(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `network` | ``$OBJECT`` | No |  |
+| `network` | `table` | No |  |
 
 ### Operations
 
@@ -99,7 +99,7 @@ local network = client:Network(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:Network():load({ id = "network_id" })
+local result, err = client:Network():load()
 ```
 
 ### Common Methods

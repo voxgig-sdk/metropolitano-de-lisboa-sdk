@@ -116,7 +116,7 @@ const network = client.Network()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `network` | ``$OBJECT`` | No |  |
+| `network` | `Record<string, any>` | No |  |
 
 ### Operations
 
@@ -125,7 +125,7 @@ const network = client.Network()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.Network().load({ id: 'network_id' })
+const result = await client.Network().load()
 ```
 
 ### Common Methods

@@ -17,7 +17,7 @@ Network = Struct.new(
   keyword_init: true
 )
 
-# Match filter for Network#load (any subset of Network fields).
+# Request payload for Network#load.
 #
 # @!attribute [rw] network
 #   @return [Hash, nil]

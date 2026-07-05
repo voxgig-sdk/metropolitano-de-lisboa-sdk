@@ -9,5 +9,7 @@ export interface Network {
   network?: Record<string, any>
 }
 
-export type NetworkLoadMatch = Partial<Network>
+export interface NetworkLoadMatch {
+  network?: Record<string, any>
+}
 

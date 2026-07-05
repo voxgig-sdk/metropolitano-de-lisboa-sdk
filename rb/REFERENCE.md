@@ -8,7 +8,7 @@ Complete API reference for the MetropolitanoDeLisboa Ruby SDK.
 ### Constructor
 
 ```ruby
-require_relative 'metropolitano-de-lisboa_sdk'
+require_relative 'MetropolitanoDeLisboa_sdk'
 
 client = MetropolitanoDeLisboaSDK.new(options)
 ```
@@ -93,7 +93,7 @@ network = client.Network
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `network` | ``$OBJECT`` | No |  |
+| `network` | `Hash` | No |  |
 
 ### Operations
 
@@ -102,7 +102,7 @@ network = client.Network
 Load a single entity matching the given criteria. Raises on error.
 
 ```ruby
-result = client.Network.load({ "id" => "network_id" })
+result = client.Network.load()
 ```
 
 ### Common Methods

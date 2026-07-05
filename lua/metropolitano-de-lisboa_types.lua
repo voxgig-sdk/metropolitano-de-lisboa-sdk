@@ -10,6 +10,7 @@
 ---@field network? table
 
 ---@class NetworkLoadMatch
+---@field network? table
 
 local M = {}
 

@@ -97,7 +97,7 @@ network := client.Network(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `network` | ``$OBJECT`` | No |  |
+| `network` | `map[string]any` | No |  |
 
 ### Operations
 
@@ -106,7 +106,7 @@ network := client.Network(nil)
 Load a single entity matching the given criteria.
 
 ```go
-result, err := client.Network(nil).Load(map[string]any{"id": "network_id"}, nil)
+result, err := client.Network(nil).Load(nil, nil)
 ```
 
 ### Common Methods

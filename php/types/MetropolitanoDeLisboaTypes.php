@@ -18,7 +18,7 @@ class Network
     public ?array $network = null;
 }
 
-/** Match filter for Network#load (any subset of Network fields). */
+/** Request payload for Network#load. */
 class NetworkLoadMatch
 {
     public ?array $network = null;

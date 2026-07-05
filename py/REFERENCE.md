@@ -8,7 +8,7 @@ Complete API reference for the MetropolitanoDeLisboa Python SDK.
 ### Constructor
 
 ```python
-from metropolitano-de-lisboa_sdk import MetropolitanoDeLisboaSDK
+from metropolitanodelisboa_sdk import MetropolitanoDeLisboaSDK
 
 client = MetropolitanoDeLisboaSDK(options)
 ```
@@ -87,7 +87,7 @@ network = client.Network()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `network` | ``$OBJECT`` | No |  |
+| `network` | `dict` | No |  |
 
 ### Operations
 
@@ -96,7 +96,7 @@ network = client.Network()
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.Network().load({"id": "network_id"})
+result = client.Network().load()
 ```
 
 ### Common Methods
