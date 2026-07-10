@@ -16,9 +16,9 @@ main: {
           url: "https://api.metrolisboa.pt/v1"
         }
       ]
+      summary: "The Lisbon Metro API provides access to comprehensive data on the Lisbon Metro system, including historical and current information about stations, lines, schedules, and passenger statistics."
       title: "Metropolitano de Lisboa"
       version: "1.0.0"
+      website: "https://metrolisboa.pt"
     }
   }
-}
-

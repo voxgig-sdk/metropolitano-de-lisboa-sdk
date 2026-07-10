@@ -6,9 +6,6 @@
     },
     "kit": {
       "config": {
-        "auth": {
-          "prefix": "Bearer"
-        },
         "docs_order": [
           "ts",
           "py",
@@ -230,14 +227,17 @@
           "url": "https://www.metrolisboa.pt/"
         },
         "description": "The Lisbon Metro API provides access to comprehensive data on the Lisbon Metro system, including historical and current information about stations, lines, schedules, and passenger statistics. The API allows users to access details about the development and expansion of the metro network, its operational history, and key milestones.",
+        "meta_source": "https://www.freepublicapis.com",
         "servers": [
           {
             "description": "Production server",
             "url": "https://api.metrolisboa.pt/v1"
           }
         ],
+        "summary": "The Lisbon Metro API provides access to comprehensive data on the Lisbon Metro system, including historical and current information about stations, lines, schedules, and passenger statistics.",
         "title": "Metropolitano de Lisboa",
-        "version": "1.0.0"
+        "version": "1.0.0",
+        "website": "https://metrolisboa.pt"
       },
       "option": {},
       "target": {
@@ -290,6 +290,9 @@
           },
           "name": "go-cli",
           "phase": {
+            "agentguide": {
+              "active": false
+            },
             "entity": {
               "active": false
             },
@@ -340,6 +343,9 @@
           },
           "name": "go-mcp",
           "phase": {
+            "agentguide": {
+              "active": false
+            },
             "entity": {
               "active": false
             },
