@@ -1,4 +1,4 @@
--- ProjectName SDK exists test
+-- MetropolitanoDeLisboa SDK exists test
 
 local sdk = require("metropolitano-de-lisboa_sdk")
 
