@@ -2,15 +2,36 @@
   "existing": {
     "network": {
       "NETWORK00": {
-        "network": {},
+        "history": {},
+        "lines": [],
+        "name": "s52",
+        "schedules": {},
+        "stations": [],
+        "statistics": {},
+        "totalLines": "s56",
+        "totalStations": "s57",
         "id": "NETWORK00"
       },
       "NETWORK01": {
-        "network": {},
+        "history": {},
+        "lines": [],
+        "name": "sa2",
+        "schedules": {},
+        "stations": [],
+        "statistics": {},
+        "totalLines": "sa6",
+        "totalStations": "sa7",
         "id": "NETWORK01"
       },
       "NETWORK02": {
-        "network": {},
+        "history": {},
+        "lines": [],
+        "name": "sf2",
+        "schedules": {},
+        "stations": [],
+        "statistics": {},
+        "totalLines": "sf6",
+        "totalStations": "sf7",
         "id": "NETWORK02"
       }
     }
@@ -18,7 +39,14 @@
   "new": {
     "network": {
       "network_ref01": {
-        "network": {}
+        "history": {},
+        "lines": [],
+        "name": "s142",
+        "schedules": {},
+        "stations": [],
+        "statistics": {},
+        "totalLines": "s146",
+        "totalStations": "s147"
       }
     }
   }

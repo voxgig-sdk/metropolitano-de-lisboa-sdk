@@ -38,7 +38,7 @@ client = MetropolitanoDeLisboaSDK()
 
 ### 3. Load a network
 
-`load()` returns the bare record (a `dict`) and raises on error.
+`load()` returns the ENTITY — call data_get() for the record — and raises on error.
 
 ```python
 try:
@@ -122,7 +122,8 @@ Create a mock client for unit testing — no server required:
 ```python
 client = MetropolitanoDeLisboaSDK.test()
 
-# Entity ops return the bare record and raise on error.
+# Entity ops return the ENTITY and raises on error;
+# call data_get() for the record.
 network = client.Network().load()
 # network contains the mock response record
 ```
@@ -218,7 +219,7 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return the bare result data (a `dict` for single-entity
+Entity operations return the ENTITY (call data_get() for the record) (a `dict` for single-entity
 ops, a `list` for `list`) and raise on error. Wrap calls in
 `try`/`except` to handle failures.
 
@@ -240,7 +241,14 @@ On error, `ok` is `False` and `err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `network` |  |
+| `history` |  |
+| `lines` |  |
+| `name` |  |
+| `schedules` |  |
+| `stations` |  |
+| `statistics` |  |
+| `totalLines` |  |
+| `totalStations` |  |
 
 Operations: Load.
 
@@ -265,7 +273,14 @@ Create an instance: `network = client.Network()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `network` | `dict` |  |
+| `history` | `dict` |  |
+| `lines` | `list` |  |
+| `name` | `str` |  |
+| `schedules` | `dict` |  |
+| `stations` | `list` |  |
+| `statistics` | `dict` |  |
+| `totalLines` | `int` |  |
+| `totalStations` | `int` |  |
 
 #### Example: Load
 

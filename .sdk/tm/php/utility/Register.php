@@ -23,6 +23,7 @@ require_once __DIR__ . '/MakeUrl.php';
 require_once __DIR__ . '/Param.php';
 require_once __DIR__ . '/PrepareAuth.php';
 require_once __DIR__ . '/PrepareBody.php';
+require_once __DIR__ . '/Graphql.php';
 require_once __DIR__ . '/PrepareHeaders.php';
 require_once __DIR__ . '/PrepareMethod.php';
 require_once __DIR__ . '/PrepareParams.php';
@@ -59,6 +60,8 @@ MetropolitanoDeLisboaUtility::setRegistrar(function (MetropolitanoDeLisboaUtilit
     $u->prepare_params = [MetropolitanoDeLisboaPrepareParams::class, 'call'];
     $u->prepare_path = [MetropolitanoDeLisboaPreparePath::class, 'call'];
     $u->prepare_query = [MetropolitanoDeLisboaPrepareQuery::class, 'call'];
+    $u->graphql_body = [MetropolitanoDeLisboaGraphql::class, 'body'];
+    $u->graphql_errors = [MetropolitanoDeLisboaGraphql::class, 'errors'];
     $u->result_basic = [MetropolitanoDeLisboaResultBasic::class, 'call'];
     $u->result_body = [MetropolitanoDeLisboaResultBody::class, 'call'];
     $u->result_headers = [MetropolitanoDeLisboaResultHeaders::class, 'call'];

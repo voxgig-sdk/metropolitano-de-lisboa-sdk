@@ -43,8 +43,8 @@ class MetropolitanoDeLisboaTestRunner
 
     public static function env_override(array $m): array
     {
-        $live = self::getenv('METROPOLITANODELISBOA_TEST_LIVE');
-        $override = self::getenv('METROPOLITANODELISBOA_TEST_OVERRIDE');
+        $live = self::getenv('METROPOLITANO_DE_LISBOA_TEST_LIVE');
+        $override = self::getenv('METROPOLITANO_DE_LISBOA_TEST_OVERRIDE');
 
         if ($live === 'TRUE' || $override === 'TRUE') {
             foreach (array_keys($m) as $key) {
@@ -63,9 +63,9 @@ class MetropolitanoDeLisboaTestRunner
             }
         }
 
-        $explain = self::getenv('METROPOLITANODELISBOA_TEST_EXPLAIN');
+        $explain = self::getenv('METROPOLITANO_DE_LISBOA_TEST_EXPLAIN');
         if ($explain !== null && $explain !== '') {
-            $m['METROPOLITANODELISBOA_TEST_EXPLAIN'] = $explain;
+            $m['METROPOLITANO_DE_LISBOA_TEST_EXPLAIN'] = $explain;
         }
 
         return $m;

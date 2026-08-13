@@ -116,7 +116,14 @@ const network = client.Network()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `network` | `Record<string, any>` | No |  |
+| `history` | `Record<string, any>` | No |  |
+| `lines` | `any[]` | No |  |
+| `name` | `string` | No |  |
+| `schedules` | `Record<string, any>` | No |  |
+| `stations` | `any[]` | No |  |
+| `statistics` | `Record<string, any>` | No |  |
+| `totalLines` | `number` | No |  |
+| `totalStations` | `number` | No |  |
 
 ### Operations
 

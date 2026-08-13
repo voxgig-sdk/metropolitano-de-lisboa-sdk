@@ -7,10 +7,24 @@
 -- edit by hand.
 
 ---@class Network
----@field network? table
+---@field history? table
+---@field lines? table
+---@field name? string
+---@field schedules? table
+---@field stations? table
+---@field statistics? table
+---@field totalLines? number
+---@field totalStations? number
 
 ---@class NetworkLoadMatch
----@field network? table
+---@field history? table
+---@field lines? table
+---@field name? string
+---@field schedules? table
+---@field stations? table
+---@field statistics? table
+---@field totalLines? number
+---@field totalStations? number
 
 local M = {}
 

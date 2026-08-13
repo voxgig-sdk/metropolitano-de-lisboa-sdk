@@ -16,11 +16,11 @@
 import pytest
 
 from metropolitanodelisboa_sdk import MetropolitanoDeLisboaSDK
-from core.error import MetropolitanoDeLisboaError
-from core.result import MetropolitanoDeLisboaResult
-from core.response import MetropolitanoDeLisboaResponse
-from core.spec import MetropolitanoDeLisboaSpec
-from feature.base_feature import MetropolitanoDeLisboaBaseFeature
+from metropolitanodelisboa_sdk.core.error import MetropolitanoDeLisboaError
+from metropolitanodelisboa_sdk.core.result import MetropolitanoDeLisboaResult
+from metropolitanodelisboa_sdk.core.response import MetropolitanoDeLisboaResponse
+from metropolitanodelisboa_sdk.core.spec import MetropolitanoDeLisboaSpec
+from metropolitanodelisboa_sdk.feature.base_feature import MetropolitanoDeLisboaBaseFeature
 
 
 def _client():

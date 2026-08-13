@@ -121,7 +121,8 @@ Create a mock client for unit testing — no server required:
 const client = MetropolitanoDeLisboaSDK.test()
 
 const network = await client.Network().load()
-// network is a bare entity populated with mock response data
+// network is the entity, populated with mock response data
+// — call network.data() for the record itself
 console.log(network)
 ```
 
@@ -284,7 +285,14 @@ The `prepare()` method returns:
 
 | Field | Description |
 | --- | --- |
-| `network` |  |
+| `history` |  |
+| `lines` |  |
+| `name` |  |
+| `schedules` |  |
+| `stations` |  |
+| `statistics` |  |
+| `totalLines` |  |
+| `totalStations` |  |
 
 Operations: load.
 
@@ -309,7 +317,14 @@ Create an instance: `const network = client.Network()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `network` | `Record<string, any>` |  |
+| `history` | `Record<string, any>` |  |
+| `lines` | `any[]` |  |
+| `name` | `string` |  |
+| `schedules` | `Record<string, any>` |  |
+| `stations` | `any[]` |  |
+| `statistics` | `Record<string, any>` |  |
+| `totalLines` | `number` |  |
+| `totalStations` | `number` |  |
 
 #### Example: Load
 

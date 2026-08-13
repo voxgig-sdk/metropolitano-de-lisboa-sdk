@@ -10,19 +10,75 @@
 
 # Network entity data model.
 #
-# @!attribute [rw] network
+# @!attribute [rw] history
 #   @return [Hash, nil]
+#
+# @!attribute [rw] lines
+#   @return [Array, nil]
+#
+# @!attribute [rw] name
+#   @return [String, nil]
+#
+# @!attribute [rw] schedules
+#   @return [Hash, nil]
+#
+# @!attribute [rw] stations
+#   @return [Array, nil]
+#
+# @!attribute [rw] statistics
+#   @return [Hash, nil]
+#
+# @!attribute [rw] totalLines
+#   @return [Integer, nil]
+#
+# @!attribute [rw] totalStations
+#   @return [Integer, nil]
 Network = Struct.new(
-  :network,
+  :history,
+  :lines,
+  :name,
+  :schedules,
+  :stations,
+  :statistics,
+  :totalLines,
+  :totalStations,
   keyword_init: true
 )
 
 # Request payload for Network#load.
 #
-# @!attribute [rw] network
+# @!attribute [rw] history
 #   @return [Hash, nil]
+#
+# @!attribute [rw] lines
+#   @return [Array, nil]
+#
+# @!attribute [rw] name
+#   @return [String, nil]
+#
+# @!attribute [rw] schedules
+#   @return [Hash, nil]
+#
+# @!attribute [rw] stations
+#   @return [Array, nil]
+#
+# @!attribute [rw] statistics
+#   @return [Hash, nil]
+#
+# @!attribute [rw] totalLines
+#   @return [Integer, nil]
+#
+# @!attribute [rw] totalStations
+#   @return [Integer, nil]
 NetworkLoadMatch = Struct.new(
-  :network,
+  :history,
+  :lines,
+  :name,
+  :schedules,
+  :stations,
+  :statistics,
+  :totalLines,
+  :totalStations,
   keyword_init: true
 )
 

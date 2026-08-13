@@ -23,8 +23,8 @@ module MetropolitanoDeLisboaTestRunner
   end
 
   def self.env_override(m)
-    live = getenv("METROPOLITANODELISBOA_TEST_LIVE")
-    override = getenv("METROPOLITANODELISBOA_TEST_OVERRIDE")
+    live = getenv("METROPOLITANO_DE_LISBOA_TEST_LIVE")
+    override = getenv("METROPOLITANO_DE_LISBOA_TEST_OVERRIDE")
 
     if live == "TRUE" || override == "TRUE"
       m.each_key do |key|
@@ -44,8 +44,8 @@ module MetropolitanoDeLisboaTestRunner
       end
     end
 
-    explain = getenv("METROPOLITANODELISBOA_TEST_EXPLAIN")
-    m["METROPOLITANODELISBOA_TEST_EXPLAIN"] = explain if explain && !explain.empty?
+    explain = getenv("METROPOLITANO_DE_LISBOA_TEST_EXPLAIN")
+    m["METROPOLITANO_DE_LISBOA_TEST_EXPLAIN"] = explain if explain && !explain.empty?
 
     m
   end

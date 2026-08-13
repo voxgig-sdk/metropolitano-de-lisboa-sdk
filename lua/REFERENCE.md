@@ -90,7 +90,14 @@ local network = client:Network(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `network` | `table` | No |  |
+| `history` | `table` | No |  |
+| `lines` | `table` | No |  |
+| `name` | `string` | No |  |
+| `schedules` | `table` | No |  |
+| `stations` | `table` | No |  |
+| `statistics` | `table` | No |  |
+| `totalLines` | `number` | No |  |
+| `totalStations` | `number` | No |  |
 
 ### Operations
 

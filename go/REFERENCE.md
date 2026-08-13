@@ -98,7 +98,14 @@ fmt.Println(network.GetName()) // "network"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `network` | `map[string]any` | No |  |
+| `history` | `map[string]any` | No |  |
+| `lines` | `[]any` | No |  |
+| `name` | `string` | No |  |
+| `schedules` | `map[string]any` | No |  |
+| `stations` | `[]any` | No |  |
+| `statistics` | `map[string]any` | No |  |
+| `totalLines` | `int` | No |  |
+| `totalStations` | `int` | No |  |
 
 ### Operations
 

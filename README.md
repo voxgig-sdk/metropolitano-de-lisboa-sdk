@@ -38,9 +38,18 @@ network, and no credentials:
 ### TypeScript
 
 ```ts
-const client = MetropolitanoDeLisboaSDK.test()
+// The offline mock starts EMPTY — seed it with the records the test needs.
+// Shape: { entity: { <entity-name>: { <id>: <record> } } }
+const client = MetropolitanoDeLisboaSDK.test({
+  entity: {
+    network: {
+      test01: { id: 'test01' },
+    },
+  },
+})
 const network = await client.Network().load()
-// network is a bare Network populated with mock data
+// network is the Network entity, populated with mock data
+// — call network.data() for the record itself
 console.log(network)
 ```
 
@@ -182,7 +191,7 @@ require_once 'metropolitanodelisboa_sdk.php';
 $client = new MetropolitanoDeLisboaSDK();
 
 
-// Load a specific network (returns the bare record; throws on error)
+// Load a specific network (returns the ENTITY; call data_get() for the record; throws on error)
 $network = $client->Network()->load();
 print_r($network);
 ```
@@ -210,7 +219,7 @@ require_relative "MetropolitanoDeLisboa_sdk"
 client = MetropolitanoDeLisboaSDK.new
 
 
-# Load a specific network (returns the bare record; raises on error)
+# Load a specific network (returns the ENTITY; call data_get for the record)
 network = client.Network.load()
 puts network
 ```
@@ -344,6 +353,9 @@ Pass custom features via the `extend` option at construction time.
 
 This SDK is generated from the upstream OpenAPI specification. It is an
 unofficial client and is not affiliated with the API provider.
+
+The OpenAPI spec(s) this SDK was generated from are kept in the
+[`.sdk/def/`](.sdk/def/) folder.
 
 - Upstream API: [https://www.metrolisboa.pt/](https://www.metrolisboa.pt/)
 

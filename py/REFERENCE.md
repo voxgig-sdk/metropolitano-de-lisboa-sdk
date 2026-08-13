@@ -87,7 +87,14 @@ network = client.Network()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `network` | `dict` | No |  |
+| `history` | `dict` | No |  |
+| `lines` | `list` | No |  |
+| `name` | `str` | No |  |
+| `schedules` | `dict` | No |  |
+| `stations` | `list` | No |  |
+| `statistics` | `dict` | No |  |
+| `totalLines` | `int` | No |  |
+| `totalStations` | `int` | No |  |
 
 ### Operations
 

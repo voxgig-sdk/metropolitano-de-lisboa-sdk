@@ -6,9 +6,44 @@ main: kit: entity: network: {
 
   fields: [
     {
-      name: "network"
+      name: "history"
       req: false
       type: "`$OBJECT`"
+    }
+    {
+      name: "lines"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "name"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "schedules"
+      req: false
+      type: "`$OBJECT`"
+    }
+    {
+      name: "stations"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "statistics"
+      req: false
+      type: "`$OBJECT`"
+    }
+    {
+      name: "totalLines"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "totalStations"
+      req: false
+      type: "`$INTEGER`"
     }
   ]
 

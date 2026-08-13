@@ -92,7 +92,14 @@ $network = $client->Network();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `network` | `array` | No |  |
+| `history` | `array` | No |  |
+| `lines` | `array` | No |  |
+| `name` | `string` | No |  |
+| `schedules` | `array` | No |  |
+| `stations` | `array` | No |  |
+| `statistics` | `array` | No |  |
+| `totalLines` | `int` | No |  |
+| `totalStations` | `int` | No |  |
 
 ### Operations
 

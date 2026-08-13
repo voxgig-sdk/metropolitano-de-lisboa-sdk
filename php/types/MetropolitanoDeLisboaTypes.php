@@ -15,12 +15,26 @@ declare(strict_types=1);
 /** Network entity data model. */
 class Network
 {
-    public ?array $network = null;
+    public ?array $history = null;
+    public ?array $lines = null;
+    public ?string $name = null;
+    public ?array $schedules = null;
+    public ?array $stations = null;
+    public ?array $statistics = null;
+    public ?int $totalLines = null;
+    public ?int $totalStations = null;
 }
 
 /** Request payload for Network#load. */
 class NetworkLoadMatch
 {
-    public ?array $network = null;
+    public ?array $history = null;
+    public ?array $lines = null;
+    public ?string $name = null;
+    public ?array $schedules = null;
+    public ?array $stations = null;
+    public ?array $statistics = null;
+    public ?int $totalLines = null;
+    public ?int $totalStations = null;
 }
 

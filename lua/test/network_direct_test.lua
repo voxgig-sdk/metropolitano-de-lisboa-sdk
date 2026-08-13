@@ -60,11 +60,11 @@ function network_direct_setup(mockres)
   local calls = {}
 
   local env = runner.env_override({
-    ["METROPOLITANODELISBOA_TEST_NETWORK_ENTID"] = {},
-    ["METROPOLITANODELISBOA_TEST_LIVE"] = "FALSE",
+    ["METROPOLITANO_DE_LISBOA_TEST_NETWORK_ENTID"] = {},
+    ["METROPOLITANO_DE_LISBOA_TEST_LIVE"] = "FALSE",
   })
 
-  local live = env["METROPOLITANODELISBOA_TEST_LIVE"] == "TRUE"
+  local live = env["METROPOLITANO_DE_LISBOA_TEST_LIVE"] == "TRUE"
 
   if live then
     local merged_opts = {

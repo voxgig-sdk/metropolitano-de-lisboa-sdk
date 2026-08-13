@@ -34,7 +34,7 @@ client = MetropolitanoDeLisboaSDK.new
 
 ```ruby
 begin
-  # load returns the bare Network record (raises on error).
+  # load returns the ENTITY — call data_get for the Network record (raises on error).
   network = client.Network.load()
   puts network
 rescue => err
@@ -117,7 +117,8 @@ Create a mock client for unit testing — no server required:
 ```ruby
 client = MetropolitanoDeLisboaSDK.test
 
-# Entity ops return the bare mock record (raises on error).
+# Entity ops return the ENTITY (raises on error);
+# call data_get for the mock record.
 network = client.Network.load()
 puts network
 ```
@@ -234,7 +235,14 @@ returns a result `Hash` with these keys:
 
 | Field | Description |
 | --- | --- |
-| `network` |  |
+| `history` |  |
+| `lines` |  |
+| `name` |  |
+| `schedules` |  |
+| `stations` |  |
+| `statistics` |  |
+| `totalLines` |  |
+| `totalStations` |  |
 
 Operations: Load.
 
@@ -259,12 +267,19 @@ Create an instance: `network = client.Network`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `network` | `Hash` |  |
+| `history` | `Hash` |  |
+| `lines` | `Array` |  |
+| `name` | `String` |  |
+| `schedules` | `Hash` |  |
+| `stations` | `Array` |  |
+| `statistics` | `Hash` |  |
+| `totalLines` | `Integer` |  |
+| `totalStations` | `Integer` |  |
 
 #### Example: Load
 
 ```ruby
-# load returns the bare Network record (raises on error).
+# load returns the ENTITY — call data_get for the Network record (raises on error).
 network = client.Network.load()
 ```
 

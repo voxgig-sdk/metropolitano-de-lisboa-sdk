@@ -14,12 +14,12 @@ from __future__ import annotations
 
 from urllib.parse import quote
 
-from config import make_config
-from features import _make_feature
-from core.control import MetropolitanoDeLisboaControl
-from core.error import MetropolitanoDeLisboaError
-from core.result import MetropolitanoDeLisboaResult
-from core.spec import MetropolitanoDeLisboaSpec
+from projectname_sdk.config import make_config
+from projectname_sdk.features import _make_feature
+from projectname_sdk.core.control import MetropolitanoDeLisboaControl
+from projectname_sdk.core.error import MetropolitanoDeLisboaError
+from projectname_sdk.core.result import MetropolitanoDeLisboaResult
+from projectname_sdk.core.spec import MetropolitanoDeLisboaSpec
 
 
 # True when this SDK was generated with the named feature.

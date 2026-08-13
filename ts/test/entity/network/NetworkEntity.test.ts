@@ -26,8 +26,8 @@ import {
 describe('NetworkEntity', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when METROPOLITANODELISBOA_TEST_LIVE=TRUE.
-  afterEach(liveDelay('METROPOLITANODELISBOA_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when METROPOLITANO_DE_LISBOA_TEST_LIVE=TRUE.
+  afterEach(liveDelay('METROPOLITANO_DE_LISBOA_TEST_LIVE'))
 
   test('instance', async () => {
     const testsdk = MetropolitanoDeLisboaSDK.test()
@@ -62,7 +62,7 @@ describe('NetworkEntity', async () => {
     // LOAD
     const network_ref01_ent = client.Network()
     const network_ref01_match_dt0: any = {}
-    const network_ref01_data_dt0 = await network_ref01_ent.load(network_ref01_match_dt0)
+    const network_ref01_data_dt0 = (await network_ref01_ent.load(network_ref01_match_dt0)).data()
     assert(null != network_ref01_data_dt0)
 
 

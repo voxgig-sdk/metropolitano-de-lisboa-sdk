@@ -93,7 +93,14 @@ network = client.Network
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `network` | `Hash` | No |  |
+| `history` | `Hash` | No |  |
+| `lines` | `Array` | No |  |
+| `name` | `String` | No |  |
+| `schedules` | `Hash` | No |  |
+| `stations` | `Array` | No |  |
+| `statistics` | `Hash` | No |  |
+| `totalLines` | `Integer` | No |  |
+| `totalStations` | `Integer` | No |  |
 
 ### Operations
 

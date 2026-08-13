@@ -3,9 +3,9 @@
 import json
 import pytest
 
-from utility.voxgig_struct import voxgig_struct as vs
+from metropolitanodelisboa_sdk.utility.voxgig_struct import voxgig_struct as vs
 from metropolitanodelisboa_sdk import MetropolitanoDeLisboaSDK
-from core import helpers
+from metropolitanodelisboa_sdk.core import helpers
 from test import runner
 
 
@@ -56,11 +56,11 @@ def _network_direct_setup(mockres):
     calls = []
 
     env = runner.env_override({
-        "METROPOLITANODELISBOA_TEST_NETWORK_ENTID": {},
-        "METROPOLITANODELISBOA_TEST_LIVE": "FALSE",
+        "METROPOLITANO_DE_LISBOA_TEST_NETWORK_ENTID": {},
+        "METROPOLITANO_DE_LISBOA_TEST_LIVE": "FALSE",
     })
 
-    live = env.get("METROPOLITANODELISBOA_TEST_LIVE") == "TRUE"
+    live = env.get("METROPOLITANO_DE_LISBOA_TEST_LIVE") == "TRUE"
 
     if live:
         merged_opts = {

@@ -258,7 +258,14 @@ Only `Direct()` returns a response envelope — a `map[string]any` with
 
 | Field | Description |
 | --- | --- |
-| `"network"` |  |
+| `"history"` |  |
+| `"lines"` |  |
+| `"name"` |  |
+| `"schedules"` |  |
+| `"stations"` |  |
+| `"statistics"` |  |
+| `"totalLines"` |  |
+| `"totalStations"` |  |
 
 Operations: Load.
 
@@ -283,7 +290,14 @@ Create an instance: `network := client.Network(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `network` | `map[string]any` |  |
+| `history` | `map[string]any` |  |
+| `lines` | `[]any` |  |
+| `name` | `string` |  |
+| `schedules` | `map[string]any` |  |
+| `stations` | `[]any` |  |
+| `statistics` | `map[string]any` |  |
+| `totalLines` | `int` |  |
+| `totalStations` | `int` |  |
 
 #### Example: Load
 

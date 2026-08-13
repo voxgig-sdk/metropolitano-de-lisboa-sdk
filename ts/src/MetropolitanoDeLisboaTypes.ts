@@ -6,10 +6,24 @@
 // @voxgig/apidef VALID_CANON). Do not edit by hand.
 
 export interface Network {
-  network?: Record<string, any>
+  history?: Record<string, any>
+  lines?: any[]
+  name?: string
+  schedules?: Record<string, any>
+  stations?: any[]
+  statistics?: Record<string, any>
+  totalLines?: number
+  totalStations?: number
 }
 
 export interface NetworkLoadMatch {
-  network?: Record<string, any>
+  history?: Record<string, any>
+  lines?: any[]
+  name?: string
+  schedules?: Record<string, any>
+  stations?: any[]
+  statistics?: Record<string, any>
+  totalLines?: number
+  totalStations?: number
 }
 

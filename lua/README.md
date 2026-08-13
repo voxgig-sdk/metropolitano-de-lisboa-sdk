@@ -225,7 +225,14 @@ Only `direct()` returns a response envelope — a `table` with `ok`,
 
 | Field | Description |
 | --- | --- |
-| `network` |  |
+| `history` |  |
+| `lines` |  |
+| `name` |  |
+| `schedules` |  |
+| `stations` |  |
+| `statistics` |  |
+| `totalLines` |  |
+| `totalStations` |  |
 
 Operations: Load.
 
@@ -250,7 +257,14 @@ Create an instance: `local network = client:Network(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `network` | `table` |  |
+| `history` | `table` |  |
+| `lines` | `table` |  |
+| `name` | `string` |  |
+| `schedules` | `table` |  |
+| `stations` | `table` |  |
+| `statistics` | `table` |  |
+| `totalLines` | `number` |  |
+| `totalStations` | `number` |  |
 
 #### Example: Load
 

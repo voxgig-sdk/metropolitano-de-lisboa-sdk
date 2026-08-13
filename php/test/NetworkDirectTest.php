@@ -65,11 +65,11 @@ function network_direct_setup($mockres)
     $calls = new \ArrayObject();
 
     $env = Runner::env_override([
-        "METROPOLITANODELISBOA_TEST_NETWORK_ENTID" => [],
-        "METROPOLITANODELISBOA_TEST_LIVE" => "FALSE",
+        "METROPOLITANO_DE_LISBOA_TEST_NETWORK_ENTID" => [],
+        "METROPOLITANO_DE_LISBOA_TEST_LIVE" => "FALSE",
     ]);
 
-    $live = $env["METROPOLITANODELISBOA_TEST_LIVE"] === "TRUE";
+    $live = $env["METROPOLITANO_DE_LISBOA_TEST_LIVE"] === "TRUE";
 
     if ($live) {
         $merged_opts = [

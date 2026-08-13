@@ -1,4 +1,4 @@
-# ProjectName SDK exists test
+# MetropolitanoDeLisboa SDK exists test
 
 import pytest
 from metropolitanodelisboa_sdk import MetropolitanoDeLisboaSDK

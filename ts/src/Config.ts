@@ -21,7 +21,7 @@ class Config {
 
 
   main = {
-    name: 'ProjectName',
+    name: 'MetropolitanoDeLisboa',
   }
 
 
@@ -56,10 +56,59 @@ class Config {
       "fields": [
         {
           "active": true,
-          "name": "network",
+          "name": "history",
           "req": false,
           "type": "`$OBJECT`",
           "index$": 0
+        },
+        {
+          "active": true,
+          "name": "lines",
+          "req": false,
+          "type": "`$ARRAY`",
+          "index$": 1
+        },
+        {
+          "active": true,
+          "name": "name",
+          "req": false,
+          "type": "`$STRING`",
+          "index$": 2
+        },
+        {
+          "active": true,
+          "name": "schedules",
+          "req": false,
+          "type": "`$OBJECT`",
+          "index$": 3
+        },
+        {
+          "active": true,
+          "name": "stations",
+          "req": false,
+          "type": "`$ARRAY`",
+          "index$": 4
+        },
+        {
+          "active": true,
+          "name": "statistics",
+          "req": false,
+          "type": "`$OBJECT`",
+          "index$": 5
+        },
+        {
+          "active": true,
+          "name": "totalLines",
+          "req": false,
+          "type": "`$INTEGER`",
+          "index$": 6
+        },
+        {
+          "active": true,
+          "name": "totalStations",
+          "req": false,
+          "type": "`$INTEGER`",
+          "index$": 7
         }
       ],
       "name": "network",
@@ -100,6 +149,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/network",
               "parts": [
