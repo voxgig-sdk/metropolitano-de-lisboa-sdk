@@ -28,7 +28,7 @@ class MetropolitanoDeLisboaSDK
     utility = MetropolitanoDeLisboaUtility.new
     @_utility = utility
 
-    config = MetropolitanoDeLisboaConfig.make_config
+    config = MetropolitanoDeLisboaConfig.shared_config
 
     @_rootctx = utility.make_context.call({
       "client" => self,

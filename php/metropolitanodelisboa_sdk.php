@@ -40,7 +40,7 @@ class MetropolitanoDeLisboaSDK
         $utility = new MetropolitanoDeLisboaUtility();
         $this->_utility = $utility;
 
-        $config = MetropolitanoDeLisboaConfig::make_config();
+        $config = MetropolitanoDeLisboaConfig::shared_config();
 
         $this->_rootctx = ($utility->make_context)([
             "client" => $this,

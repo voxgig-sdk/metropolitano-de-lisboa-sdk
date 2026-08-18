@@ -23,7 +23,7 @@ func NewMetropolitanoDeLisboaSDK(options map[string]any) *MetropolitanoDeLisboaS
 
 	sdk.utility = NewUtility()
 
-	config := MakeConfig()
+	config := SharedConfig()
 
 	sdk.rootctx = sdk.utility.MakeContext(map[string]any{
 		"client":  sdk,
