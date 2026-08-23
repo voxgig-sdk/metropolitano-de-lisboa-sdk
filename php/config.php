@@ -33,6 +33,9 @@ class MetropolitanoDeLisboaConfig
         return [
             "main" => [
                 "name" => "MetropolitanoDeLisboa",
+                "slug" => "metropolitano-de-lisboa",
+                "version" => "0.0.1",
+                "target" => "php",
             ],
             "feature" => [
                 "test" => [
