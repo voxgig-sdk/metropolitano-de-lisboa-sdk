@@ -42,6 +42,7 @@ class MetropolitanoDeLisboaConfig
           'options' => [
             'active' => false,
           ],
+          'transport' => 'base',
         ],
             ],
             "options" => [
