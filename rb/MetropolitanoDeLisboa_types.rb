@@ -47,38 +47,18 @@ Network = Struct.new(
 
 # Request payload for Network#load.
 #
-# @!attribute [rw] history
-#   @return [Hash, nil]
+# @!attribute [rw] historical
+#   @return [Boolean, nil]
 #
-# @!attribute [rw] lines
-#   @return [Array, nil]
-#
-# @!attribute [rw] name
+# @!attribute [rw] include
 #   @return [String, nil]
 #
-# @!attribute [rw] schedules
-#   @return [Hash, nil]
-#
-# @!attribute [rw] stations
-#   @return [Array, nil]
-#
-# @!attribute [rw] statistics
-#   @return [Hash, nil]
-#
-# @!attribute [rw] totalLines
-#   @return [Integer, nil]
-#
-# @!attribute [rw] totalStations
-#   @return [Integer, nil]
+# @!attribute [rw] line
+#   @return [String, nil]
 NetworkLoadMatch = Struct.new(
-  :history,
-  :lines,
-  :name,
-  :schedules,
-  :stations,
-  :statistics,
-  :totalLines,
-  :totalStations,
+  :historical,
+  :include,
+  :line,
   keyword_init: true
 )
 

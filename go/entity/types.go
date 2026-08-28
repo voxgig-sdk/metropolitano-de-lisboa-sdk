@@ -26,14 +26,9 @@ type Network struct {
 
 // NetworkLoadMatch is the typed request payload for Network.LoadTyped.
 type NetworkLoadMatch struct {
-	History *map[string]any `json:"history,omitempty"`
-	Lines *[]any `json:"lines,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Schedules *map[string]any `json:"schedules,omitempty"`
-	Stations *[]any `json:"stations,omitempty"`
-	Statistics *map[string]any `json:"statistics,omitempty"`
-	TotalLines *int `json:"totalLines,omitempty"`
-	TotalStations *int `json:"totalStations,omitempty"`
+	Historical *bool `json:"historical,omitempty"`
+	Include *string `json:"include,omitempty"`
+	Line *string `json:"line,omitempty"`
 }
 
 // asMap turns a typed request/data struct into the map[string]any the

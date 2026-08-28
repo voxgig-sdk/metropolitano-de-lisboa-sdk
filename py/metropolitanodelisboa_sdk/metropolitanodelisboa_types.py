@@ -28,11 +28,6 @@ class Network(TypedDict, total=False):
 
 
 class NetworkLoadMatch(TypedDict, total=False):
-    history: dict
-    lines: list
-    name: str
-    schedules: dict
-    stations: list
-    statistics: dict
-    totalLines: int
-    totalStations: int
+    historical: bool
+    include: str
+    line: str

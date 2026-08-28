@@ -28,13 +28,8 @@ class Network
 /** Request payload for Network#load. */
 class NetworkLoadMatch
 {
-    public ?array $history = null;
-    public ?array $lines = null;
-    public ?string $name = null;
-    public ?array $schedules = null;
-    public ?array $stations = null;
-    public ?array $statistics = null;
-    public ?int $totalLines = null;
-    public ?int $totalStations = null;
+    public ?bool $historical = null;
+    public ?string $include = null;
+    public ?string $line = null;
 }
 

@@ -17,14 +17,9 @@
 ---@field totalStations? number
 
 ---@class NetworkLoadMatch
----@field history? table
----@field lines? table
----@field name? string
----@field schedules? table
----@field stations? table
----@field statistics? table
----@field totalLines? number
----@field totalStations? number
+---@field historical? boolean
+---@field include? string
+---@field line? string
 
 local M = {}
 
