@@ -82,8 +82,10 @@ main: kit: entity: network: {
           }
           method: "GET"
           orig: "/network"
-          parts: [
-            "network"
+          segments: [
+            {
+              lit: "network"
+            }
           ]
           select: {
             exist: [

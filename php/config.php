@@ -124,8 +124,10 @@ class MetropolitanoDeLisboaConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/network',
-                  'parts' => [
-                    'network',
+                  'segments' => [
+                    [
+                      'lit' => 'network',
+                    ],
                   ],
                   'select' => [
                     'exist' => [
@@ -137,6 +139,9 @@ class MetropolitanoDeLisboaConfig
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body.network`',
+                  ],
+                  'parts' => [
+                    'network',
                   ],
                 ],
               ],

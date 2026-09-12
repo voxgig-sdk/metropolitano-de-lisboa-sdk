@@ -110,8 +110,10 @@ module MetropolitanoDeLisboaConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/network",
-                  "parts" => [
-                    "network",
+                  "segments" => [
+                    {
+                      "lit" => "network",
+                    },
                   ],
                   "select" => {
                     "exist" => [
@@ -124,6 +126,9 @@ module MetropolitanoDeLisboaConfig
                     "req" => "`reqdata`",
                     "res" => "`body.network`",
                   },
+                  "parts" => [
+                    "network",
+                  ],
                 },
               ],
             },

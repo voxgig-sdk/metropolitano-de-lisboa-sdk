@@ -98,8 +98,10 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/network",
-                ["parts"] = {
-                  "network",
+                ["segments"] = {
+                  {
+                    ["lit"] = "network",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -111,6 +113,9 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body.network`",
+                },
+                ["parts"] = {
+                  "network",
                 },
               },
             },
