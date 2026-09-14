@@ -105,7 +105,7 @@ local result, err = client:Network():load()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/metropolitano-de-lisboa` | publish pending — [install from git tag](https://github.com/voxgig-sdk/metropolitano-de-lisboa-sdk/releases) |
+| TypeScript | `@voxgig-sdk/metropolitano-de-lisboa-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/metropolitano-de-lisboa-sdk/releases) |
 | Python | `voxgig-sdk-metropolitano-de-lisboa` | publish pending — [install from git tag](https://github.com/voxgig-sdk/metropolitano-de-lisboa-sdk/releases) |
 | PHP | `voxgig-sdk/metropolitano-de-lisboa` | publish pending — [install from git tag](https://github.com/voxgig-sdk/metropolitano-de-lisboa-sdk/releases) |
 | Golang | `github.com/voxgig-sdk/metropolitano-de-lisboa-sdk/go` | `go get github.com/voxgig-sdk/metropolitano-de-lisboa-sdk/go@latest` |
@@ -119,7 +119,7 @@ local result, err = client:Network():load()
 ### TypeScript
 
 ```ts
-import { MetropolitanoDeLisboaSDK } from '@voxgig-sdk/metropolitano-de-lisboa'
+import { MetropolitanoDeLisboaSDK } from '@voxgig-sdk/metropolitano-de-lisboa-sdk'
 
 const client = new MetropolitanoDeLisboaSDK()
 

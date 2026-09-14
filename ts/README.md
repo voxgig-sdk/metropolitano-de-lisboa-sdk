@@ -28,7 +28,7 @@ loading a specific record.
 ### 1. Create a client
 
 ```ts
-import { MetropolitanoDeLisboaSDK } from '@voxgig-sdk/metropolitano-de-lisboa'
+import { MetropolitanoDeLisboaSDK } from '@voxgig-sdk/metropolitano-de-lisboa-sdk'
 
 const client = new MetropolitanoDeLisboaSDK()
 ```
@@ -415,7 +415,7 @@ metropolitano-de-lisboa/
 Import the SDK from the package root:
 
 ```ts
-import { MetropolitanoDeLisboaSDK } from '@voxgig-sdk/metropolitano-de-lisboa'
+import { MetropolitanoDeLisboaSDK } from '@voxgig-sdk/metropolitano-de-lisboa-sdk'
 ```
 
 ### Entity state
