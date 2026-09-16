@@ -4,7 +4,10 @@ declare(strict_types=1);
 // MetropolitanoDeLisboa SDK feature factory
 
 require_once __DIR__ . '/feature/BaseFeature.php';
+require_once __DIR__ . '/feature/RatelimitFeature.php';
+require_once __DIR__ . '/feature/RetryFeature.php';
 require_once __DIR__ . '/feature/TestFeature.php';
+require_once __DIR__ . '/feature/TimeoutFeature.php';
 
 
 class MetropolitanoDeLisboaFeatures
@@ -14,8 +17,14 @@ class MetropolitanoDeLisboaFeatures
         switch ($name) {
             case "base":
                 return new MetropolitanoDeLisboaBaseFeature();
+            case "ratelimit":
+                return new MetropolitanoDeLisboaRatelimitFeature();
+            case "retry":
+                return new MetropolitanoDeLisboaRetryFeature();
             case "test":
                 return new MetropolitanoDeLisboaTestFeature();
+            case "timeout":
+                return new MetropolitanoDeLisboaTimeoutFeature();
             default:
                 return new MetropolitanoDeLisboaBaseFeature();
         }
@@ -31,7 +40,10 @@ class MetropolitanoDeLisboaFeatures
     {
         switch ($name) {
             case "base":
+            case "ratelimit":
+            case "retry":
             case "test":
+            case "timeout":
                 return true;
             default:
                 return false;

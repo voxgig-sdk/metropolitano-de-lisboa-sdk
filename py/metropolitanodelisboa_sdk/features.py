@@ -1,12 +1,18 @@
 # MetropolitanoDeLisboa SDK feature factory
 
 from metropolitanodelisboa_sdk.feature.base_feature import MetropolitanoDeLisboaBaseFeature
+from metropolitanodelisboa_sdk.feature.ratelimit_feature import MetropolitanoDeLisboaRatelimitFeature
+from metropolitanodelisboa_sdk.feature.retry_feature import MetropolitanoDeLisboaRetryFeature
 from metropolitanodelisboa_sdk.feature.test_feature import MetropolitanoDeLisboaTestFeature
+from metropolitanodelisboa_sdk.feature.timeout_feature import MetropolitanoDeLisboaTimeoutFeature
 
 
 _FEATURES = {
     "base": lambda: MetropolitanoDeLisboaBaseFeature(),
+    "ratelimit": lambda: MetropolitanoDeLisboaRatelimitFeature(),
+    "retry": lambda: MetropolitanoDeLisboaRetryFeature(),
     "test": lambda: MetropolitanoDeLisboaTestFeature(),
+    "timeout": lambda: MetropolitanoDeLisboaTimeoutFeature(),
 }
 
 
