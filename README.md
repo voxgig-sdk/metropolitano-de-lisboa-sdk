@@ -105,12 +105,12 @@ local result, err = client:Network():load()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/metropolitano-de-lisboa-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/metropolitano-de-lisboa-sdk/releases) |
-| Python | `voxgig-sdk-metropolitano-de-lisboa` | publish pending — [install from git tag](https://github.com/voxgig-sdk/metropolitano-de-lisboa-sdk/releases) |
-| PHP | `voxgig-sdk/metropolitano-de-lisboa` | publish pending — [install from git tag](https://github.com/voxgig-sdk/metropolitano-de-lisboa-sdk/releases) |
+| TypeScript | `@voxgig-sdk/metropolitano-de-lisboa-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/metropolitano-de-lisboa-sdk/tags) |
+| Python | `voxgig-sdk-metropolitano-de-lisboa` | publish pending — [install from git tag](https://github.com/voxgig-sdk/metropolitano-de-lisboa-sdk/tags) |
+| PHP | `voxgig-sdk/metropolitano-de-lisboa` | publish pending — [install from git tag](https://github.com/voxgig-sdk/metropolitano-de-lisboa-sdk/tags) |
 | Golang | `github.com/voxgig-sdk/metropolitano-de-lisboa-sdk/go` | `go get github.com/voxgig-sdk/metropolitano-de-lisboa-sdk/go@latest` |
-| Ruby | `voxgig-sdk-metropolitano-de-lisboa` | publish pending — [install from git tag](https://github.com/voxgig-sdk/metropolitano-de-lisboa-sdk/releases) |
-| Lua | `voxgig-sdk-metropolitano-de-lisboa` | publish pending — [install from git tag](https://github.com/voxgig-sdk/metropolitano-de-lisboa-sdk/releases) |
+| Ruby | `voxgig-sdk-metropolitano-de-lisboa` | publish pending — [install from git tag](https://github.com/voxgig-sdk/metropolitano-de-lisboa-sdk/tags) |
+| Lua | `voxgig-sdk-metropolitano-de-lisboa` | publish pending — [install from git tag](https://github.com/voxgig-sdk/metropolitano-de-lisboa-sdk/tags) |
 | Go CLI | `github.com/voxgig-sdk/metropolitano-de-lisboa-sdk/go-cli` | `go install github.com/voxgig-sdk/metropolitano-de-lisboa-sdk/go-cli/cmd/metropolitano-de-lisboa@latest` |
 | Go MCP server | `github.com/voxgig-sdk/metropolitano-de-lisboa-sdk/go-mcp` | `go get github.com/voxgig-sdk/metropolitano-de-lisboa-sdk/go-mcp@latest` |
 
