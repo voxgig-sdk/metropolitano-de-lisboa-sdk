@@ -11,19 +11,12 @@ const FEATURE_CLASS = {
     test: TestFeature_1.TestFeature,
     timeout: TimeoutFeature_1.TimeoutFeature,
 };
-// Per-feature plugin DEFINITIONS (voxgig/plugin `Definition` values), from
-// the model's active plugin groups. A feature that takes a `plugins` option
-// (secrets over sekreto) reads its own entry; a feature with no plugins has
-// none. Named imports above make each definition statically reachable, so
-// an SDK carries exactly the plugin modules its model selects — the same
-// leanness the old side-effect registry imports bought, without a registry.
 const FEATURE_PLUGINS = {};
 exports.FEATURE_PLUGINS = FEATURE_PLUGINS;
 class Config {
     makeFeature(fn) {
         const fc = FEATURE_CLASS[fn];
         const fi = new fc();
-        // TODO: errors etc
         return fi;
     }
     // False for a feature added at runtime via options.extend (station's
@@ -114,34 +107,42 @@ class Config {
             "fields": [
                 {
                     "name": "history",
+                    "title": "History",
                     "type": "`$OBJECT`"
                 },
                 {
                     "name": "lines",
+                    "title": "Lines",
                     "type": "`$ARRAY`"
                 },
                 {
                     "name": "name",
+                    "title": "Name",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "schedules",
+                    "title": "Schedules",
                     "type": "`$OBJECT`"
                 },
                 {
                     "name": "stations",
+                    "title": "Stations",
                     "type": "`$ARRAY`"
                 },
                 {
                     "name": "statistics",
+                    "title": "Statistics",
                     "type": "`$OBJECT`"
                 },
                 {
                     "name": "totalLines",
+                    "title": "Total Lines",
                     "type": "`$INTEGER`"
                 },
                 {
                     "name": "totalStations",
+                    "title": "Total Stations",
                     "type": "`$INTEGER`"
                 }
             ],
@@ -152,30 +153,6 @@ class Config {
                     "name": "load",
                     "points": [
                         {
-                            "args": {
-                                "query": [
-                                    {
-                                        "example": false,
-                                        "kind": "query",
-                                        "name": "historical",
-                                        "orig": "historical",
-                                        "type": "`$BOOLEAN`"
-                                    },
-                                    {
-                                        "example": "stations,lines",
-                                        "kind": "query",
-                                        "name": "include",
-                                        "orig": "include",
-                                        "type": "`$STRING`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "line",
-                                        "orig": "line",
-                                        "type": "`$STRING`"
-                                    }
-                                ]
-                            },
                             "kind": "http",
                             "method": "GET",
                             "orig": "/network",
@@ -184,20 +161,45 @@ class Config {
                                     "lit": "network"
                                 }
                             ],
+                            "parts": [
+                                "network"
+                            ],
+                            "rename": {},
+                            "transform": {
+                                "req": "`reqdata`",
+                                "res": "`body.network`"
+                            },
+                            "args": {
+                                "query": [
+                                    {
+                                        "name": "historical",
+                                        "orig": "historical",
+                                        "type": "`$BOOLEAN`",
+                                        "kind": "query",
+                                        "example": false
+                                    },
+                                    {
+                                        "name": "include",
+                                        "orig": "include",
+                                        "type": "`$STRING`",
+                                        "kind": "query",
+                                        "example": "stations,lines"
+                                    },
+                                    {
+                                        "name": "line",
+                                        "orig": "line",
+                                        "type": "`$STRING`",
+                                        "kind": "query"
+                                    }
+                                ]
+                            },
                             "select": {
                                 "exist": [
                                     "historical",
                                     "include",
                                     "line"
                                 ]
-                            },
-                            "transform": {
-                                "req": "`reqdata`",
-                                "res": "`body.network`"
-                            },
-                            "parts": [
-                                "network"
-                            ]
+                            }
                         }
                     ]
                 }

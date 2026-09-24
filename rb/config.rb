@@ -99,34 +99,42 @@ module MetropolitanoDeLisboaConfig
           "fields" => [
             {
               "name" => "history",
+              "title" => "History",
               "type" => "`$OBJECT`",
             },
             {
               "name" => "lines",
+              "title" => "Lines",
               "type" => "`$ARRAY`",
             },
             {
               "name" => "name",
+              "title" => "Name",
               "type" => "`$STRING`",
             },
             {
               "name" => "schedules",
+              "title" => "Schedules",
               "type" => "`$OBJECT`",
             },
             {
               "name" => "stations",
+              "title" => "Stations",
               "type" => "`$ARRAY`",
             },
             {
               "name" => "statistics",
+              "title" => "Statistics",
               "type" => "`$OBJECT`",
             },
             {
               "name" => "totalLines",
+              "title" => "Total Lines",
               "type" => "`$INTEGER`",
             },
             {
               "name" => "totalStations",
+              "title" => "Total Stations",
               "type" => "`$INTEGER`",
             },
           ],
@@ -137,30 +145,6 @@ module MetropolitanoDeLisboaConfig
               "name" => "load",
               "points" => [
                 {
-                  "args" => {
-                    "query" => [
-                      {
-                        "example" => false,
-                        "kind" => "query",
-                        "name" => "historical",
-                        "orig" => "historical",
-                        "type" => "`$BOOLEAN`",
-                      },
-                      {
-                        "example" => "stations,lines",
-                        "kind" => "query",
-                        "name" => "include",
-                        "orig" => "include",
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "line",
-                        "orig" => "line",
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/network",
@@ -169,6 +153,38 @@ module MetropolitanoDeLisboaConfig
                       "lit" => "network",
                     },
                   ],
+                  "parts" => [
+                    "network",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body.network`",
+                  },
+                  "args" => {
+                    "query" => [
+                      {
+                        "name" => "historical",
+                        "orig" => "historical",
+                        "type" => "`$BOOLEAN`",
+                        "kind" => "query",
+                        "example" => false,
+                      },
+                      {
+                        "name" => "include",
+                        "orig" => "include",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "example" => "stations,lines",
+                      },
+                      {
+                        "name" => "line",
+                        "orig" => "line",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "historical",
@@ -176,13 +192,6 @@ module MetropolitanoDeLisboaConfig
                       "line",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body.network`",
-                  },
-                  "parts" => [
-                    "network",
-                  ],
                 },
               ],
             },

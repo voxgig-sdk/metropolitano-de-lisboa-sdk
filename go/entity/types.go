@@ -1,7 +1,7 @@
 // Typed models for the MetropolitanoDeLisboa SDK.
 //
-// GENERATED from the API model: main.kit.entity.<e>.fields[] and per-op
-// params (op.<name>.points[].args.params[]). Field/param types come from the
+// GENERATED from the API model: main.kit.entity.<e>.fields{} and per-op
+// params (op.<name>.points[].g.params[]). Field/param types come from the
 // canonical type sentinels via @voxgig/sdkgen canonToType (source of truth:
 // @voxgig/apidef VALID_CANON). Do not edit by hand.
 package entity
@@ -14,14 +14,6 @@ import (
 
 // Network is the typed data model for the network entity.
 type Network struct {
-	History *map[string]any `json:"history,omitempty"`
-	Lines *[]any `json:"lines,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Schedules *map[string]any `json:"schedules,omitempty"`
-	Stations *[]any `json:"stations,omitempty"`
-	Statistics *map[string]any `json:"statistics,omitempty"`
-	TotalLines *int `json:"totalLines,omitempty"`
-	TotalStations *int `json:"totalStations,omitempty"`
 }
 
 // NetworkLoadMatch is the typed request payload for Network.LoadTyped.

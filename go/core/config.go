@@ -91,34 +91,42 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "history",
+						"title": "History",
 						"type": "`$OBJECT`",
 					},
 					map[string]any{
 						"name": "lines",
+						"title": "Lines",
 						"type": "`$ARRAY`",
 					},
 					map[string]any{
 						"name": "name",
+						"title": "Name",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "schedules",
+						"title": "Schedules",
 						"type": "`$OBJECT`",
 					},
 					map[string]any{
 						"name": "stations",
+						"title": "Stations",
 						"type": "`$ARRAY`",
 					},
 					map[string]any{
 						"name": "statistics",
+						"title": "Statistics",
 						"type": "`$OBJECT`",
 					},
 					map[string]any{
 						"name": "totalLines",
+						"title": "Total Lines",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "totalStations",
+						"title": "Total Stations",
 						"type": "`$INTEGER`",
 					},
 				},
@@ -129,30 +137,6 @@ func MakeConfig() map[string]any {
 						"name": "load",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{
-									"query": []any{
-										map[string]any{
-											"example": false,
-											"kind": "query",
-											"name": "historical",
-											"orig": "historical",
-											"type": "`$BOOLEAN`",
-										},
-										map[string]any{
-											"example": "stations,lines",
-											"kind": "query",
-											"name": "include",
-											"orig": "include",
-											"type": "`$STRING`",
-										},
-										map[string]any{
-											"kind": "query",
-											"name": "line",
-											"orig": "line",
-											"type": "`$STRING`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "GET",
 								"orig": "/network",
@@ -161,19 +145,44 @@ func MakeConfig() map[string]any {
 										"lit": "network",
 									},
 								},
+								"parts": []any{
+									"network",
+								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body.network`",
+								},
+								"args": map[string]any{
+									"query": []any{
+										map[string]any{
+											"name": "historical",
+											"orig": "historical",
+											"type": "`$BOOLEAN`",
+											"kind": "query",
+											"example": false,
+										},
+										map[string]any{
+											"name": "include",
+											"orig": "include",
+											"type": "`$STRING`",
+											"kind": "query",
+											"example": "stations,lines",
+										},
+										map[string]any{
+											"name": "line",
+											"orig": "line",
+											"type": "`$STRING`",
+											"kind": "query",
+										},
+									},
+								},
 								"select": map[string]any{
 									"exist": []any{
 										"historical",
 										"include",
 										"line",
 									},
-								},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body.network`",
-								},
-								"parts": []any{
-									"network",
 								},
 							},
 						},

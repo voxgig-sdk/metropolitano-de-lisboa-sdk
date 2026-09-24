@@ -24,62 +24,136 @@
         "repr": "auto"
       },
       "contributor": {},
+      "doc": {
+        "active": true,
+        "assets": {
+          "path": ".sdk/doc/assets"
+        },
+        "brand": {
+          "label": "",
+          "notice": "",
+          "shortNotice": "",
+          "url": ""
+        },
+        "ci": {
+          "active": true,
+          "branch": "main"
+        },
+        "content": {
+          "path": ".sdk/doc/content"
+        },
+        "edition": {
+          "summary": {
+            "active": true,
+            "base": "node_modules/@voxgig/docgen/project/.sdk",
+            "brand": {},
+            "filter": {
+              "entities": [],
+              "features": [],
+              "targets": []
+            },
+            "kind": "summary",
+            "name": "summary",
+            "origname": "",
+            "output": {
+              "path": "SUMMARY.md"
+            },
+            "package": "@voxgig/docgen",
+            "published": false,
+            "site": {
+              "active": true
+            },
+            "style": {},
+            "title": ""
+          }
+        },
+        "qa": {
+          "vocabulary": []
+        },
+        "style": {
+          "color": {
+            "accent": "#00c6d8",
+            "background": "#f5f5f9",
+            "darkBackground": "#0f1117",
+            "darkText": "#e6edf3",
+            "primary": "#e70042",
+            "text": "#0a0a0a"
+          },
+          "font": "Nunito, system-ui, sans-serif",
+          "fontFile": "",
+          "headingFont": "Nunito, system-ui, sans-serif",
+          "headingFontFile": "",
+          "logo": "",
+          "mode": "light",
+          "mono": "ui-monospace, monospace",
+          "monoFile": ""
+        },
+        "target": {}
+      },
       "entity": {
         "network": {
           "active": true,
           "alias": {
             "field": {}
           },
-          "fields": [
-            {
-              "active": true,
-              "name": "history",
-              "req": false,
-              "type": "`$OBJECT`"
+          "fields": {
+            "history": {
+              "a": true,
+              "h": "History",
+              "n": "history",
+              "r": false,
+              "t": "`$OBJECT`"
             },
-            {
-              "active": true,
-              "name": "lines",
-              "req": false,
-              "type": "`$ARRAY`"
+            "lines": {
+              "a": true,
+              "h": "Lines",
+              "n": "lines",
+              "r": false,
+              "t": "`$ARRAY`"
             },
-            {
-              "active": true,
-              "name": "name",
-              "req": false,
-              "type": "`$STRING`"
+            "name": {
+              "a": true,
+              "h": "Name",
+              "n": "name",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "schedules",
-              "req": false,
-              "type": "`$OBJECT`"
+            "schedules": {
+              "a": true,
+              "h": "Schedules",
+              "n": "schedules",
+              "r": false,
+              "t": "`$OBJECT`"
             },
-            {
-              "active": true,
-              "name": "stations",
-              "req": false,
-              "type": "`$ARRAY`"
+            "stations": {
+              "a": true,
+              "h": "Stations",
+              "n": "stations",
+              "r": false,
+              "t": "`$ARRAY`"
             },
-            {
-              "active": true,
-              "name": "statistics",
-              "req": false,
-              "type": "`$OBJECT`"
+            "statistics": {
+              "a": true,
+              "h": "Statistics",
+              "n": "statistics",
+              "r": false,
+              "t": "`$OBJECT`"
             },
-            {
-              "active": true,
-              "name": "totalLines",
-              "req": false,
-              "type": "`$INTEGER`"
+            "totalLines": {
+              "a": true,
+              "h": "Total Lines",
+              "n": "totalLines",
+              "r": false,
+              "t": "`$INTEGER`"
             },
-            {
-              "active": true,
-              "name": "totalStations",
-              "req": false,
-              "type": "`$INTEGER`"
+            "totalStations": {
+              "a": true,
+              "h": "Total Stations",
+              "n": "totalStations",
+              "r": false,
+              "t": "`$INTEGER`"
             }
-          ],
+          },
           "name": "network",
           "op": {
             "load": {
@@ -87,59 +161,59 @@
               "name": "load",
               "points": [
                 {
-                  "active": true,
-                  "args": {
+                  "a": true,
+                  "co": {
+                    "id": "GET /network",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
                     "query": [
                       {
-                        "active": true,
-                        "example": false,
-                        "kind": "query",
-                        "name": "historical",
-                        "orig": "historical",
-                        "reqd": false,
-                        "type": "`$BOOLEAN`"
+                        "a": true,
+                        "ex": false,
+                        "k": "query",
+                        "n": "historical",
+                        "or": "historical",
+                        "r": false,
+                        "t": "`$BOOLEAN`"
                       },
                       {
-                        "active": true,
-                        "example": "stations,lines",
-                        "kind": "query",
-                        "name": "include",
-                        "orig": "include",
-                        "reqd": false,
-                        "type": "`$STRING`"
+                        "a": true,
+                        "ex": "stations,lines",
+                        "k": "query",
+                        "n": "include",
+                        "or": "include",
+                        "r": false,
+                        "t": "`$STRING`"
                       },
                       {
-                        "active": true,
-                        "kind": "query",
-                        "name": "line",
-                        "orig": "line",
-                        "reqd": false,
-                        "type": "`$STRING`"
+                        "a": true,
+                        "k": "query",
+                        "n": "line",
+                        "or": "line",
+                        "r": false,
+                        "t": "`$STRING`"
                       }
                     ]
                   },
-                  "contract": {
-                    "id": "GET /network",
-                    "json": "{\"operationId\":\"getNetworkInfo\",\"parameters\":[{\"description\":\"Comma-separated list of data to include (stations, lines, schedules, statistics, history)\",\"in\":\"query\",\"name\":\"include\",\"required\":false,\"schema\":{\"example\":\"stations,lines\",\"type\":\"string\"}},{\"description\":\"Filter by specific metro line\",\"in\":\"query\",\"name\":\"line\",\"required\":false,\"schema\":{\"enum\":[\"blue\",\"yellow\",\"green\",\"red\"],\"type\":\"string\"}},{\"description\":\"Include historical data\",\"in\":\"query\",\"name\":\"historical\",\"required\":false,\"schema\":{\"default\":false,\"type\":\"boolean\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"network\":{\"properties\":{\"history\":{\"properties\":{\"inaugurated\":{\"example\":\"1959-12-29\",\"format\":\"date\",\"type\":\"string\"},\"milestones\":{\"items\":{\"properties\":{\"date\":{\"format\":\"date\",\"type\":\"string\"},\"description\":{\"type\":\"string\"},\"event\":{\"type\":\"string\"}},\"type\":\"object\"},\"type\":\"array\"}},\"type\":\"object\"},\"lines\":{\"items\":{\"properties\":{\"color\":{\"example\":\"#0066CC\",\"type\":\"string\"},\"id\":{\"example\":\"blue\",\"type\":\"string\"},\"inaugurated\":{\"example\":\"1959-12-29\",\"format\":\"date\",\"type\":\"string\"},\"name\":{\"example\":\"Linha Azul\",\"type\":\"string\"},\"stations\":{\"items\":{\"type\":\"string\"},\"type\":\"array\"}},\"type\":\"object\"},\"type\":\"array\"},\"name\":{\"example\":\"Metropolitano de Lisboa\",\"type\":\"string\"},\"schedules\":{\"properties\":{\"weekday\":{\"properties\":{\"closing\":{\"example\":\"01:00\",\"type\":\"string\"},\"opening\":{\"example\":\"06:30\",\"type\":\"string\"}},\"type\":\"object\"},\"weekend\":{\"properties\":{\"closing\":{\"example\":\"01:00\",\"type\":\"string\"},\"opening\":{\"example\":\"06:30\",\"type\":\"string\"}},\"type\":\"object\"}},\"type\":\"object\"},\"stations\":{\"items\":{\"properties\":{\"accessibility\":{\"example\":true,\"type\":\"boolean\"},\"id\":{\"example\":\"alameda\",\"type\":\"string\"},\"inaugurated\":{\"format\":\"date\",\"type\":\"string\"},\"lines\":{\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"location\":{\"properties\":{\"latitude\":{\"example\":38.7352,\"format\":\"double\",\"type\":\"number\"},\"longitude\":{\"example\":-9.1386,\"format\":\"double\",\"type\":\"number\"}},\"type\":\"object\"},\"name\":{\"example\":\"Alameda\",\"type\":\"string\"}},\"type\":\"object\"},\"type\":\"array\"},\"statistics\":{\"properties\":{\"annualPassengers\":{\"example\":173000000,\"type\":\"integer\"},\"dailyAveragePassengers\":{\"example\":474000,\"type\":\"integer\"},\"totalNetworkLength\":{\"description\":\"Total network length in kilometers\",\"example\":44.5,\"format\":\"double\",\"type\":\"number\"}},\"type\":\"object\"},\"totalLines\":{\"example\":4,\"type\":\"integer\"},\"totalStations\":{\"example\":56,\"type\":\"integer\"}},\"type\":\"object\"}},\"type\":\"object\"}}},\"description\":\"Successful response with network information\"},\"400\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"error\":{\"example\":\"Invalid parameter value\",\"type\":\"string\"},\"message\":{\"example\":\"The specified line does not exist\",\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Bad request - Invalid parameters\"},\"500\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"error\":{\"example\":\"Internal server error\",\"type\":\"string\"},\"message\":{\"example\":\"An unexpected error occurred\",\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Internal server error\"}},\"securitySource\":\"unspecified\"}",
-                    "source": "openapi3",
-                    "version": 1
-                  },
-                  "kind": "http",
-                  "method": "GET",
-                  "orig": "/network",
-                  "segments": [
-                    {
-                      "lit": "network"
-                    }
-                  ],
-                  "select": {
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/network",
+                  "q": {
                     "exist": [
                       "historical",
                       "include",
                       "line"
                     ]
                   },
-                  "transform": {
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "network"
+                    }
+                  ],
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body.network`"
                   }
@@ -568,17 +642,17 @@
           "param": {},
           "step": [
             {
-              "active": true,
-              "data": {},
-              "input": {
+              "a": true,
+              "d": {},
+              "i": {
                 "ref": "network_ref01",
                 "srcdatavar": "network_ref01_data",
                 "suffix": "_dt0"
               },
-              "match": {},
-              "op": "load",
-              "spec": [],
-              "valid": [
+              "m": {},
+              "o": "load",
+              "s": [],
+              "v": [
                 {
                   "apply": "TextFieldMark",
                   "def": {
